@@ -476,3 +476,9 @@ html.is-mobile .sheet-stage .perf-faded.pos { opacity: .7; }
 .title-block, .date-block, .home-lang { position: absolute; z-index: 3; }
 .home-lang { position: fixed; }
 html.is-mobile .home-lang { position: absolute; }
+
+
+
+/* text for search engines and screen readers only: present in the page, never shown */
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
