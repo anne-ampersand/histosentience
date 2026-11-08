@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HISTOSENTIENCE — 08–10.12.2026, St Gilles</title>
+  <meta name="description" content="Histosentience: a three-day artist-run programme of performance. 8–10 December 2026, Au Jus and Metarage, St Gilles, Brussels.">
+  <link rel="preload" href="paper/background.jpg" as="image">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- print-grain filter used for images "behind the paper" (tweak values to taste) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="print-grain" x="-2%" y="-2%" width="104%" height="104%" color-interpolation-filters="sRGB">
+      <feColorMatrix in="SourceGraphic" type="matrix" result="luma"
+        values=".33 .5 .17 0 0  .33 .5 .17 0 0  .33 .5 .17 0 0  0 0 0 1 0"/>
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="4" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" result="noiseL"
+        values=".33 .33 .33 0 0  .33 .33 .33 0 0  .33 .33 .33 0 0  0 0 0 0 1"/>
+      <feComposite in="luma" in2="noiseL" operator="arithmetic" k1="0" k2="1" k3="1.1" k4="-.5" result="mix"/>
+      <feComponentTransfer in="mix" result="toned">
+        <feFuncR type="linear" slope="2.2" intercept="-.47"/>
+        <feFuncG type="linear" slope="2.2" intercept="-.47"/>
+        <feFuncB type="linear" slope="2.2" intercept="-.47"/>
+      </feComponentTransfer>
+      <feComposite in="toned" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <!-- lighter version for dark photos: lifts the blacks before the grain -->
+    <filter id="print-grain-light" x="-2%" y="-2%" width="104%" height="104%" color-interpolation-filters="sRGB">
+      <feColorMatrix in="SourceGraphic" type="matrix" result="luma0"
+        values=".33 .5 .17 0 0  .33 .5 .17 0 0  .33 .5 .17 0 0  0 0 0 1 0"/>
+      <feComponentTransfer in="luma0" result="luma">
+        <feFuncR type="linear" slope=".62" intercept=".42"/>
+        <feFuncG type="linear" slope=".62" intercept=".42"/>
+        <feFuncB type="linear" slope=".62" intercept=".42"/>
+      </feComponentTransfer>
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" result="noiseL"
+        values=".33 .33 .33 0 0  .33 .33 .33 0 0  .33 .33 .33 0 0  0 0 0 0 1"/>
+      <feComposite in="luma" in2="noiseL" operator="arithmetic" k1="0" k2="1" k3="1.1" k4="-.5" result="mix"/>
+      <feComponentTransfer in="mix" result="toned">
+        <feFuncR type="linear" slope="2.2" intercept="-.47"/>
+        <feFuncG type="linear" slope="2.2" intercept="-.47"/>
+        <feFuncB type="linear" slope="2.2" intercept="-.47"/>
+      </feComponentTransfer>
+      <feComposite in="toned" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <!-- HOMEPAGE "faded" images: matches the Photoshop look (2x Pin Light 20%):
+         contrast halved, shadows lifted to light grey, cool blue-grey tint, fine grain -->
+    <filter id="home-back" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feColorMatrix in="SourceGraphic" type="matrix" result="toned"
+        values=".156 .307 .057 0 .39
+                .156 .307 .057 0 .41
+                .150 .295 .055 0 .432
+                0    0    0    1 0"/>
+      <feTurbulence type="fractalNoise" baseFrequency=".95" numOctaves="1" seed="3" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" result="noiseL"
+        values=".33 .33 .33 0 0  .33 .33 .33 0 0  .33 .33 .33 0 0  0 0 0 0 1"/>
+      <feComposite in="toned" in2="noiseL" operator="arithmetic" k1="0" k2="1" k3=".3" k4="-.15" result="grained"/>
+      <feComposite in="grained" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <!-- stronger version for cleaner photos: extra clumpy grain + a bit more contrast (texture: "strong") -->
+    <filter id="home-back-strong" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feColorMatrix in="SourceGraphic" type="matrix" result="toned"
+        values=".19 .37 .07 0 .33
+                .19 .37 .07 0 .35
+                .182 .355 .067 0 .38
+                0    0    0    1 0"/>
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="1" seed="5" result="n1"/>
+      <feTurbulence type="fractalNoise" baseFrequency=".32" numOctaves="2" seed="11" result="n2"/>
+      <feComposite in="n1" in2="n2" operator="arithmetic" k1="0" k2=".55" k3=".45" k4="0" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" result="noiseL"
+        values=".33 .33 .33 0 0  .33 .33 .33 0 0  .33 .33 .33 0 0  0 0 0 0 1"/>
+      <feComposite in="toned" in2="noiseL" operator="arithmetic" k1="0" k2="1" k3=".62" k4="-.31" result="grained"/>
+      <feComposite in="grained" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <!-- heaviest version for very flat photos (texture: "heavy"): strong mottled print texture -->
+    <filter id="home-back-heavy" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feColorMatrix in="SourceGraphic" type="matrix" result="toned"
+        values=".22 .43 .08 0 .29
+                .22 .43 .08 0 .31
+                .21 .41 .077 0 .34
+                0    0    0    1 0"/>
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="1" seed="6" result="n1"/>
+      <feTurbulence type="fractalNoise" baseFrequency=".09" numOctaves="3" seed="21" result="n2"/>
+      <feComposite in="n1" in2="n2" operator="arithmetic" k1="0" k2=".5" k3=".5" k4="0" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" result="noiseL"
+        values=".33 .33 .33 0 0  .33 .33 .33 0 0  .33 .33 .33 0 0  0 0 0 0 1"/>
+      <feComposite in="toned" in2="noiseL" operator="arithmetic" k1="0" k2="1" k3=".8" k4="-.4" result="grained"/>
+      <feComposite in="grained" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <!-- HOMEPAGE colour images: shadows lifted ~18%, light grain -->
+    <filter id="home-front" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feComponentTransfer in="SourceGraphic" result="lifted">
+        <feFuncR type="linear" slope=".81" intercept=".17"/>
+        <feFuncG type="linear" slope=".80" intercept=".18"/>
+        <feFuncB type="linear" slope=".79" intercept=".19"/>
+      </feComponentTransfer>
+      <feTurbulence type="fractalNoise" baseFrequency=".95" numOctaves="1" seed="9" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" result="noiseL"
+        values=".33 .33 .33 0 0  .33 .33 .33 0 0  .33 .33 .33 0 0  0 0 0 0 1"/>
+      <feComposite in="lifted" in2="noiseL" operator="arithmetic" k1="0" k2="1" k3=".25" k4="-.125" result="grained"/>
+      <feComposite in="grained" in2="SourceGraphic" operator="in"/>
+    </filter>
+  </svg>
+
+
+  <!-- HOMEPAGE (always present; other pages are laid over it like sheets of paper) -->
+  <main id="home" aria-label="Histosentience programme">
+    <div class="paper"><div class="paper-base"></div><div class="paper-light"></div></div>
+    <div class="stage" id="home-stage"></div>
+  </main>
+
+  <!-- ABOUT / PERFORMANCE SHEET -->
+  <section id="sheet" aria-hidden="true">
+    <div class="sheet-paper"></div>
+    <div id="sheet-lang"></div>
+    <a href="#" class="close" aria-label="Back to homepage">X</a>
+    <div class="sheet-scroll" id="sheet-scroll">
+      <div class="sheet-stage" id="sheet-stage"></div>
+    </div>
+  </section>
+
+  <script src="js/content.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
