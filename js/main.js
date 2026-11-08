@@ -453,14 +453,14 @@
       void root.offsetWidth;
       root.classList.remove("closing", "no-turn-anim");
     }, 1300);
-    document.title = "HISTOSENTIENCE — 08–10.12.2026, St Gilles";
+    document.title = "HISTOSENTIENCE — performance programme, 8–10 December 2026, Brussels";
     sh.setAttribute("aria-hidden", "true");
   }
   function finishClose() {
     var sheet = document.getElementById("sheet");
     sheet.classList.remove("open");
     sheet.setAttribute("aria-hidden", "true");
-    document.title = "HISTOSENTIENCE — 08–10.12.2026, St Gilles";
+    document.title = "HISTOSENTIENCE — performance programme, 8–10 December 2026, Brussels";
   }
 
   function route() {

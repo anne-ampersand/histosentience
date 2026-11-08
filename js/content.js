@@ -130,7 +130,7 @@ window.SITE = {
       { label: { en: "Organised by", fr: "Organisé par", nl: "Georganiseerd door", hr: "Organizacija" },
         text: "au JUS, Ana Letunić, Marko Gutić Mižimakov, Zrinka Užbinec, Stefa Govaart, Chloe Chignell" },
       { label: { en: "Thanks to", fr: "Remerciements", nl: "Met dank aan", hr: "Zahvale" },
-        text: "Sabine - Metarage" },
+        text: "<a href=\"https://www.garage29-offestival.be/a-propos/\">Sabina Scarlat</a> - Metarage" },
       { label: { en: "Funding", fr: "Soutien", nl: "Financiering", hr: "Financijska potpora" },
         text: {
           en: "<a href=\"https://zagreb.hr/javni-poziv-za-predlaganje-programa-u-kulturi-grad/210547\">City of Zagreb</a><br>St Gilles Commune",
