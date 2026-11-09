@@ -300,6 +300,7 @@
     t.dataset.flow = "1";
     var paras = tr(P.description).slice();
     var html = "";
+    if (tr(P.epigraph)) html += '<p class="epigraph">' + tr(P.epigraph) + "</p>";
     if (P.descriptionStartsWithTitle) {
       html += '<p><span class="lead">' + p.title + "</span> " + paras.shift() + "</p>";
     } else {
@@ -310,9 +311,10 @@
     if (credits && credits.length) {
       html += '<div class="credits"><h3>' + ui("credits") + "</h3>" + credits.map(function (x) { return "<p>" + x + "</p>"; }).join("") + "</div>";
     }
-    if (P.bios && P.bios.length) {
+    var bios = (P.bios || []).filter(function (b) { return tr(b.text); });
+    if (bios.length) {
       html += '<details class="bios"><summary>' + ui("bio") + '<span class="sign"></span></summary><div class="bios-body">';
-      P.bios.forEach(function (b) { html += '<p><strong class="bio-name">' + tr(b.name) + "</strong> " + tr(b.text) + "</p>"; });
+      bios.forEach(function (b) { html += '<p><strong class="bio-name">' + tr(b.name) + "</strong> " + tr(b.text) + "</p>"; });
       html += "</div></details>";
     }
     t.innerHTML = html;
