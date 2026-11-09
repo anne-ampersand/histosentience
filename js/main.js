@@ -275,6 +275,7 @@
     var info = h("div", "perf-info");
     info.appendChild(h("div", "big", [p.date].concat(tr(P.timesPage || p.timesPage || p.times)).join("<br>")));
     if (tr(p.location)) info.appendChild(h("div", "small", venueLink(tr(p.location))));
+    if (tr(p.note)) info.appendChild(h("div", "small", tr(p.note)));
     if (tr(S.afterTalkNote)) info.appendChild(h("div", "small", tr(S.afterTalkNote)));
     if (tr(p.registration)) info.appendChild(h("div", "small", tr(p.registration)));
     if (tr(p.duration)) info.appendChild(h("div", "small", ui("duration") + ": " + tr(p.duration)));

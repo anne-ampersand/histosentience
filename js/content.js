@@ -355,14 +355,20 @@ window.SITE = {
       titleDisplay: "Dolls & Goats",
       artists: "Zrinka Užbinec",
       date: "10-12-26",
-      times:     { en: ["17-20h multiple slots"], fr: ["17-20h plusieurs créneaux"], nl: ["17-20u meerdere tijdsloten"], hr: ["17-20h više termina"] },
-      timesPage: { en: ["17-20h multiple slots"], fr: ["17-20h plusieurs créneaux"], nl: ["17-20u meerdere tijdsloten"], hr: ["17-20h više termina"] },
+      times:     { en: ["18h doors open", "19h performance"], fr: ["18h ouverture des portes", "19h performance"], nl: ["18u deuren open", "19u voorstelling"], hr: ["18h otvaranje vrata", "19h izvedba"] },
+      timesPage: { en: ["18h doors open", "19h performance"], fr: ["18h ouverture des portes", "19h performance"], nl: ["18u deuren open", "19u voorstelling"], hr: ["18h otvaranje vrata", "19h izvedba"] },
+      note: {
+        en: "Doors open at 18:00 with a reading session, individual or shared, with books in the space. The performance begins at 19:00.",
+        fr: "Ouverture des portes à 18h avec une session de lecture, individuelle ou partagée, avec des livres dans l’espace. La performance commence à 19h.",
+        nl: "Deuren open om 18u met een leessessie, individueel of gedeeld, met boeken in de ruimte. De voorstelling begint om 19u.",
+        hr: "Vrata se otvaraju u 18h sesijom čitanja, individualnog ili zajedničkog, s knjigama u prostoru. Izvedba počinje u 19h."
+      },
       location: { en: "au JUS, St Gilles", fr: "au JUS, Saint-Gilles", nl: "au JUS, Sint-Gillis", hr: "au JUS, Saint-Gilles" },
       registration: {
-        en: "Due to limited seating, please register by emailing <a href=\"mailto:mizimakov@gmail.com\"><em>mizimakov@gmail.com</em></a> specifying which slot you would like to attend.",
-        fr: "Le nombre de places étant limité, merci de réserver par e-mail à <a href=\"mailto:mizimakov@gmail.com\"><em>mizimakov@gmail.com</em></a> en précisant le créneau souhaité.",
-        nl: "Omdat het aantal plaatsen beperkt is, reserveer je via <a href=\"mailto:mizimakov@gmail.com\"><em>mizimakov@gmail.com</em></a> met vermelding van het tijdslot dat je wilt bijwonen.",
-        hr: "Zbog ograničenog broja mjesta, molimo rezervirajte e-mailom na <a href=\"mailto:mizimakov@gmail.com\"><em>mizimakov@gmail.com</em></a> uz naznaku termina koji želite posjetiti."
+        en: "Due to limited seating, please register by emailing <a href=\"mailto:mizimakov@gmail.com\"><em>mizimakov@gmail.com</em></a>.",
+        fr: "Le nombre de places étant limité, merci de réserver par e-mail à <a href=\"mailto:mizimakov@gmail.com\"><em>mizimakov@gmail.com</em></a>.",
+        nl: "Omdat het aantal plaatsen beperkt is, reserveer je via <a href=\"mailto:mizimakov@gmail.com\"><em>mizimakov@gmail.com</em></a>.",
+        hr: "Zbog ograničenog broja mjesta, molimo rezervirajte e-mailom na <a href=\"mailto:mizimakov@gmail.com\"><em>mizimakov@gmail.com</em></a>."
       },
       duration: "",
 
