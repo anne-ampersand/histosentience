@@ -29,7 +29,7 @@
    - Any text can be written once (same in all languages):
          artists: "Chloe Chignell"
      or per language:
-         location: { en: "au JUS, St Gilles", fr: "au JUS, Saint-Gilles", ... }
+         location: { en: "au JUS, Saint-Gilles", fr: "au JUS, Saint-Gilles", ... }
    - If a language is missing for a text, the English one is shown.
    - The order of the switch on the homepage is set in "languages".
 
@@ -47,6 +47,18 @@ window.SITE = {
   defaultLanguage: "en",
 
   title: "HISTOSENTIENCE",
+
+  /* Booking line on the homepage, under the title */
+  booking: {
+    text: {
+      en: "Free entry upon reservation:",
+      fr: "Entrée libre sur réservation :",
+      nl: "Gratis toegang na reservatie:",
+      hr: "Ulaz slobodan uz rezervaciju:"
+    },
+    email: "info@histosentience.be",
+    position: { desktop: { x: 333, y: 905 }, mobile: { x: 12, y: 896, w: 200 } }
+  },
   titlePosition: { desktop: { x: 333, y: 818 }, mobile: { x: 12, y: 12 } },
 
   /* Page-turn sound when the About / performance pages open and close.
@@ -77,6 +89,7 @@ window.SITE = {
     bio:       { en: "Artist Bio", fr: "Biographie", nl: "Biografie", hr: "Biografija" },
     duration:  { en: "Duration", fr: "Durée", nl: "Duur", hr: "Trajanje" },
     back:      { en: "Back to homepage", fr: "Retour à l'accueil", nl: "Terug naar home", hr: "Natrag na početnu" },
+    aboutLink: { en: "about", fr: "à propos", nl: "over", hr: "o programu" },   // small link under the title on phones
     enlarge:   { en: "View image larger", fr: "Agrandir l'image", nl: "Afbeelding vergroten", hr: "Povećaj sliku" }
   },
 
@@ -133,7 +146,7 @@ window.SITE = {
         text: "<a href=\"https://www.garage29-offestival.be/a-propos/\">Sabina Scarlat</a> - Metarage" },
       { label: { en: "Funding", fr: "Soutien", nl: "Financiering", hr: "Financijska potpora" },
         text: {
-          en: "<a href=\"https://zagreb.hr/javni-poziv-za-predlaganje-programa-u-kulturi-grad/210547\">City of Zagreb</a><br>St Gilles Commune",
+          en: "<a href=\"https://zagreb.hr/javni-poziv-za-predlaganje-programa-u-kulturi-grad/210547\">City of Zagreb</a><br>Saint-Gilles Commune",
           fr: "<a href=\"https://zagreb.hr/javni-poziv-za-predlaganje-programa-u-kulturi-grad/210547\">Ville de Zagreb</a><br>Commune de Saint-Gilles",
           nl: "<a href=\"https://zagreb.hr/javni-poziv-za-predlaganje-programa-u-kulturi-grad/210547\">Stad Zagreb</a><br>Gemeente Sint-Gillis",
           hr: "<a href=\"https://zagreb.hr/javni-poziv-za-predlaganje-programa-u-kulturi-grad/210547\">Grad Zagreb</a><br>Općina Saint-Gilles"
@@ -154,7 +167,7 @@ window.SITE = {
   /* Links used wherever a venue name appears on performance pages */
   venueLinks: {
     "au JUS": "https://aujus.be/",
-    "METARAGE": "https://www.garage29-offestival.be/"
+    "Metarage": "https://www.garage29-offestival.be/"
   },
 
   /* ------------------------------------------------------------------
@@ -167,28 +180,28 @@ window.SITE = {
     /* ============================ 2009 ============================ */
     {
       id: "2009",
-      title: "2009",
+      title: "2 0 0 9",
       titleDisplay: "2 0 0 9",            // how the title is written on homepage + programme
       artists: "Stefa Govaart & Marko Gutić Mižimakov",
-      date: "08-12-26",
+      date: { en: "08 DEC ’26", fr: "08 DÉC ’26", nl: "08 DEC ’26", hr: "08. PRO ’26" },
       times: {
-        en: ["18h first performance", "20h second performance"],
-        fr: ["18h première représentation", "20h deuxième représentation"],
-        nl: ["18u eerste voorstelling", "20u tweede voorstelling"],
-        hr: ["18h prva izvedba", "20h druga izvedba"]
+        en: ["16h first performance", "19h second performance"],
+        fr: ["16h première représentation", "19h deuxième représentation"],
+        nl: ["16u eerste voorstelling", "19u tweede voorstelling"],
+        hr: ["16h prva izvedba", "19h druga izvedba"]
       },
       timesPage: {
-        en: ["18h 1st performance", "20h 2nd performance"],
-        fr: ["18h 1re représentation", "20h 2e représentation"],
-        nl: ["18u 1e voorstelling", "20u 2e voorstelling"],
-        hr: ["18h 1. izvedba", "20h 2. izvedba"]
+        en: ["16h 1st performance", "19h 2nd performance"],
+        fr: ["16h 1re représentation", "19h 2e représentation"],
+        nl: ["16u 1e voorstelling", "19u 2e voorstelling"],
+        hr: ["16h 1. izvedba", "19h 2. izvedba"]
       },
-      location: { en: "au JUS, St Gilles", fr: "au JUS, Saint-Gilles", nl: "au JUS, Sint-Gillis", hr: "au JUS, Saint-Gilles" },
+      location: { en: "au JUS, Saint-Gilles", fr: "au JUS, Saint-Gilles", nl: "au JUS, Sint-Gillis", hr: "au JUS, Saint-Gilles" },
       registration: {
-        en: "Due to limited seating, please register by emailing <a href=\"mailto:mizimakov@gmail.com\"><em>mizimakov@gmail.com</em></a> specifying which slot you would like to attend.",
-        fr: "Le nombre de places étant limité, merci de réserver par e-mail à <a href=\"mailto:mizimakov@gmail.com\"><em>mizimakov@gmail.com</em></a> en précisant la représentation souhaitée.",
-        nl: "Omdat het aantal plaatsen beperkt is, reserveer je via <a href=\"mailto:mizimakov@gmail.com\"><em>mizimakov@gmail.com</em></a> met vermelding van de voorstelling die je wilt bijwonen.",
-        hr: "Zbog ograničenog broja mjesta, molimo rezervirajte e-mailom na <a href=\"mailto:mizimakov@gmail.com\"><em>mizimakov@gmail.com</em></a> uz naznaku izvedbe koju želite posjetiti."
+        en: "Due to limited seating, please register by emailing <a href=\"mailto:info@histosentience.be\"><em>info@histosentience.be</em></a> specifying which slot you would like to attend.",
+        fr: "Le nombre de places étant limité, merci de réserver par e-mail à <a href=\"mailto:info@histosentience.be\"><em>info@histosentience.be</em></a> en précisant la représentation souhaitée.",
+        nl: "Omdat het aantal plaatsen beperkt is, reserveer je via <a href=\"mailto:info@histosentience.be\"><em>info@histosentience.be</em></a> met vermelding van de voorstelling die je wilt bijwonen.",
+        hr: "Zbog ograničenog broja mjesta, molimo rezervirajte e-mailom na <a href=\"mailto:info@histosentience.be\"><em>info@histosentience.be</em></a> uz naznaku izvedbe koju želite posjetiti."
       },
       duration: { en: "45 minutes", fr: "45 minutes", nl: "45 minuten", hr: "45 minuta" },
 
@@ -212,25 +225,25 @@ window.SITE = {
           en: [
             "is a performance that, through objects, sound, video and choreography, reflects on depiction, technology and historicity, and uses argument — the practice of persuasion — as a performative device.",
             "The performance is organized around the encounter of two performers with oddly grouped items. Clustered portraits of public figures, reconstructed from memory, stand alongside a still life composed of objects refracted through a mirrored sphere. Over the course of the performance, we observe the gathered objects in a material time caught up in social relations of power and reproduction that evade us.",
-            "A rendering of a nameless cityscape in aeropittura style further choreographs the space. Speed and altitude break down into dream-like forms of “the future”. Fetishizing bird’s-eye view, seeking to represent representation as such, for the Italian futurists, aeropittura was to impress its viewers: look what technology can do! 2009 borrows this disputed backdrop for a final call to action.",
+            "A rendering of a nameless cityscape in aeropittura style further choreographs the space. Speed and altitude break down into dream-like forms of “the future”. Fetishizing bird’s-eye view, seeking to represent representation as such, for the Italian futurists, aeropittura was to impress its viewers: look what technology can do! 2 0 0 9 borrows this disputed backdrop for a final call to action.",
             "We treat the long first decade of the twenty-first century as a memorable epoch, a coming-of-age story of sorts, today distant enough to return as a problem and demand interpretation. Looking back, we ask how we became available to the popular forms that now organize us."
           ],
           fr: [
             "est une performance qui, à travers des objets, du son, de la vidéo et de la chorégraphie, réfléchit à la représentation, à la technologie et à l'historicité, et utilise l'argumentation — l'art de la persuasion — comme dispositif performatif.",
             "La performance s'organise autour de la rencontre de deux performeur·euses avec des objets étrangement regroupés. Des portraits de personnalités publiques, reconstitués de mémoire et réunis en grappes, côtoient une nature morte composée d'objets réfractés par une sphère miroir. Au fil de la performance, nous observons les objets rassemblés dans un temps matériel pris dans des rapports sociaux de pouvoir et de reproduction qui nous échappent.",
-            "Le rendu d'un paysage urbain anonyme dans le style de l'aeropittura chorégraphie lui aussi l'espace. La vitesse et l'altitude se décomposent en formes oniriques du « futur ». Fétichisant la vue à vol d'oiseau, cherchant à représenter la représentation en tant que telle, l'aeropittura devait, pour les futuristes italiens, impressionner ses spectateurs : regardez ce que la technologie peut faire ! 2009 emprunte cette toile de fond controversée pour un ultime appel à l'action.",
+            "Le rendu d'un paysage urbain anonyme dans le style de l'aeropittura chorégraphie lui aussi l'espace. La vitesse et l'altitude se décomposent en formes oniriques du « futur ». Fétichisant la vue à vol d'oiseau, cherchant à représenter la représentation en tant que telle, l'aeropittura devait, pour les futuristes italiens, impressionner ses spectateurs : regardez ce que la technologie peut faire ! 2 0 0 9 emprunte cette toile de fond controversée pour un ultime appel à l'action.",
             "Nous traitons la longue première décennie du XXIe siècle comme une époque mémorable, une sorte de récit d'apprentissage, aujourd'hui assez lointaine pour revenir comme un problème et exiger une interprétation. En regardant en arrière, nous nous demandons comment nous sommes devenu·es disponibles aux formes populaires qui nous organisent aujourd'hui."
           ],
           nl: [
             "is een performance die via objecten, geluid, video en choreografie reflecteert over verbeelding, technologie en historiciteit, en argumentatie — de praktijk van het overtuigen — inzet als performatief middel.",
             "De performance draait rond de ontmoeting van twee performers met vreemd gegroepeerde voorwerpen. Gebundelde portretten van publieke figuren, uit het geheugen gereconstrueerd, staan naast een stilleven van objecten die gebroken worden door een spiegelende bol. In de loop van de performance zien we de verzamelde objecten in een materiële tijd die verstrikt is in sociale verhoudingen van macht en reproductie die ons ontglippen.",
-            "Een weergave van een naamloos stadsgezicht in aeropittura-stijl choreografeert de ruimte verder. Snelheid en hoogte vallen uiteen in droomachtige vormen van ‘de toekomst’. Voor de Italiaanse futuristen, die het vogelperspectief fetisjiseerden en de representatie als zodanig wilden verbeelden, moest de aeropittura de toeschouwer imponeren: kijk wat technologie kan! 2009 leent dit omstreden decor voor een laatste oproep tot actie.",
+            "Een weergave van een naamloos stadsgezicht in aeropittura-stijl choreografeert de ruimte verder. Snelheid en hoogte vallen uiteen in droomachtige vormen van ‘de toekomst’. Voor de Italiaanse futuristen, die het vogelperspectief fetisjiseerden en de representatie als zodanig wilden verbeelden, moest de aeropittura de toeschouwer imponeren: kijk wat technologie kan! 2 0 0 9 leent dit omstreden decor voor een laatste oproep tot actie.",
             "We behandelen het lange eerste decennium van de eenentwintigste eeuw als een gedenkwaardig tijdperk, een soort coming-of-ageverhaal, dat nu ver genoeg achter ons ligt om terug te keren als een probleem dat om interpretatie vraagt. Terugblikkend vragen we ons af hoe we beschikbaar werden voor de populaire vormen die ons vandaag organiseren."
           ],
           hr: [
             "je izvedba koja kroz predmete, zvuk, video i koreografiju promišlja prikazivanje, tehnologiju i povijesnost, a argumentaciju — praksu uvjeravanja — koristi kao izvedbeno sredstvo.",
             "Izvedba je organizirana oko susreta dvoje izvođača s neobično grupiranim predmetima. Skupine portreta javnih osoba, rekonstruiranih po sjećanju, stoje uz mrtvu prirodu sastavljenu od predmeta prelomljenih kroz zrcalnu kuglu. Tijekom izvedbe promatramo okupljene predmete u materijalnom vremenu zahvaćenom društvenim odnosima moći i reprodukcije koji nam izmiču.",
-            "Prikaz bezimenog gradskog krajolika u stilu aeropitture dodatno koreografira prostor. Brzina i visina raspadaju se u snolike oblike „budućnosti”. Fetišizirajući ptičju perspektivu i nastojeći prikazati samo prikazivanje, aeropittura je za talijanske futuriste trebala impresionirati gledatelje: pogledajte što tehnologija može! 2009 posuđuje tu spornu pozadinu za završni poziv na djelovanje.",
+            "Prikaz bezimenog gradskog krajolika u stilu aeropitture dodatno koreografira prostor. Brzina i visina raspadaju se u snolike oblike „budućnosti”. Fetišizirajući ptičju perspektivu i nastojeći prikazati samo prikazivanje, aeropittura je za talijanske futuriste trebala impresionirati gledatelje: pogledajte što tehnologija može! 2 0 0 9 posuđuje tu spornu pozadinu za završni poziv na djelovanje.",
             "Dugo prvo desetljeće dvadeset i prvog stoljeća tretiramo kao pamtljivu epohu, svojevrsnu priču o odrastanju, danas dovoljno daleku da se vrati kao problem i zatraži tumačenje. Gledajući unatrag, pitamo se kako smo postali dostupni popularnim formama koje nas danas organiziraju."
           ]
         },
@@ -243,10 +256,10 @@ window.SITE = {
             hr: "bavi se vizualnom, izvedbenom i tekstualnom umjetnošću te živi između Bruxellesa i Zagreba. Kroz intimne i suradničke procese animira i koreografira tijela i predmete, digitalne i opipljive, u neorijentabilne forme. Njegov se rad sve više bavi materijom kao pohranjenim vremenom, sedimentom društvenih odnosa i trenjima koja ih pomiču. Aktualni projekti uključuju 2 0 0 9 i Sagittarius A* sa Stefom Govaart te njezin film Duplicity. Vanjski je suradnik Akademije likovnih umjetnosti u Zagrebu, gdje suorganizira i umjetnički festival PoslijeSvijet (AfterWorld). U Bruxellesu trenutačno organizira Histosentience, program izvedbi koji ugošćuju au JUS i Metarage."
           } },
           { name: "Stefa Govaart", text: {
-            en: "is a Brussels-based performance artist. Collaborative in nature, their work probes the stakes of critique today, and considers the performer as “function” caught up in distinct forms of institutionality. They are currently collaborating with Marko Gutić Mižimakov on two film projects and the performance titled 2009. Govaart performed in works by Oscar Murillo/Lydia McGlinchey, Eszter Salamon, Claudia Pagès Rabal, among others. BEGIN/The Mirror (2024) is a dance performance for the theater made in collaboration with Bryana Fritz and Chloe Chignell (Beursschouwburg, Brussels, October 30-31). They teach writing and coordinate the theory programme at P.A.R.T.S. in Brussels.",
-            fr: "est un·e artiste de performance basé·e à Bruxelles. De nature collaborative, son travail interroge les enjeux de la critique aujourd'hui et envisage le·la performeur·euse comme une « fonction » prise dans des formes distinctes d'institutionnalité. Iel collabore actuellement avec Marko Gutić Mižimakov sur deux projets de films et sur la performance 2009. Govaart a performé dans des œuvres d'Oscar Murillo/Lydia McGlinchey, Eszter Salamon, Claudia Pagès Rabal, entre autres. BEGIN/The Mirror (2024) est une performance de danse pour le théâtre créée en collaboration avec Bryana Fritz et Chloe Chignell (Beursschouwburg, Bruxelles, 30-31 octobre). Iel enseigne l'écriture et coordonne le programme théorique de P.A.R.T.S. à Bruxelles.",
-            nl: "is een in Brussel gevestigde performancekunstenaar. Hun werk is collaboratief van aard, onderzoekt wat er vandaag op het spel staat voor kritiek en beschouwt de performer als een ‘functie’ die verstrikt zit in verschillende vormen van institutionaliteit. Hen werkt momenteel met Marko Gutić Mižimakov samen aan twee filmprojecten en de performance 2009. Govaart speelde in werk van Oscar Murillo/Lydia McGlinchey, Eszter Salamon, Claudia Pagès Rabal en anderen. BEGIN/The Mirror (2024) is een dansvoorstelling voor het theater, gemaakt in samenwerking met Bryana Fritz en Chloe Chignell (Beursschouwburg, Brussel, 30-31 oktober). Hen geeft les in schrijven en coördineert het theorieprogramma van P.A.R.T.S. in Brussel.",
-            hr: "bavi se izvedbenom umjetnošću i živi u Bruxellesu. Njezin rad, suradnički po prirodi, propituje ulog kritike danas i promatra izvođača kao „funkciju” zahvaćenu različitim oblicima institucionalnosti. Trenutačno surađuje s Markom Gutićem Mižimakovim na dva filmska projekta i izvedbi 2009. Govaart je nastupala u radovima Oscara Murilla/Lydije McGlinchey, Eszter Salamon, Claudije Pagès Rabal i drugih. BEGIN/The Mirror (2024) plesna je izvedba za kazalište nastala u suradnji s Bryanom Fritz i Chloe Chignell (Beursschouwburg, Bruxelles, 30.–31. listopada). Predaje pisanje i koordinira teorijski program na P.A.R.T.S.-u u Bruxellesu."
+            en: "is a Brussels-based performance artist. Collaborative in nature, their work probes the stakes of critique today, and considers the performer as “function” caught up in distinct forms of institutionality. They are currently collaborating with Marko Gutić Mižimakov on two film projects and the performance titled 2 0 0 9. Govaart performed in works by Oscar Murillo/Lydia McGlinchey, Eszter Salamon, Claudia Pagès Rabal, among others. BEGIN/The Mirror (2024) is a dance performance for the theater made in collaboration with Bryana Fritz and Chloe Chignell (Beursschouwburg, Brussels, October 30-31). They teach writing and coordinate the theory programme at P.A.R.T.S. in Brussels.",
+            fr: "est un·e artiste de performance basé·e à Bruxelles. De nature collaborative, son travail interroge les enjeux de la critique aujourd'hui et envisage le·la performeur·euse comme une « fonction » prise dans des formes distinctes d'institutionnalité. Iel collabore actuellement avec Marko Gutić Mižimakov sur deux projets de films et sur la performance 2 0 0 9. Govaart a performé dans des œuvres d'Oscar Murillo/Lydia McGlinchey, Eszter Salamon, Claudia Pagès Rabal, entre autres. BEGIN/The Mirror (2024) est une performance de danse pour le théâtre créée en collaboration avec Bryana Fritz et Chloe Chignell (Beursschouwburg, Bruxelles, 30-31 octobre). Iel enseigne l'écriture et coordonne le programme théorique de P.A.R.T.S. à Bruxelles.",
+            nl: "is een in Brussel gevestigde performancekunstenaar. Hun werk is collaboratief van aard, onderzoekt wat er vandaag op het spel staat voor kritiek en beschouwt de performer als een ‘functie’ die verstrikt zit in verschillende vormen van institutionaliteit. Hen werkt momenteel met Marko Gutić Mižimakov samen aan twee filmprojecten en de performance 2 0 0 9. Govaart speelde in werk van Oscar Murillo/Lydia McGlinchey, Eszter Salamon, Claudia Pagès Rabal en anderen. BEGIN/The Mirror (2024) is een dansvoorstelling voor het theater, gemaakt in samenwerking met Bryana Fritz en Chloe Chignell (Beursschouwburg, Brussel, 30-31 oktober). Hen geeft les in schrijven en coördineert het theorieprogramma van P.A.R.T.S. in Brussel.",
+            hr: "bavi se izvedbenom umjetnošću i živi u Bruxellesu. Njezin rad, suradnički po prirodi, propituje ulog kritike danas i promatra izvođača kao „funkciju” zahvaćenu različitim oblicima institucionalnosti. Trenutačno surađuje s Markom Gutićem Mižimakovim na dva filmska projekta i izvedbi 2 0 0 9. Govaart je nastupala u radovima Oscara Murilla/Lydije McGlinchey, Eszter Salamon, Claudije Pagès Rabal i drugih. BEGIN/The Mirror (2024) plesna je izvedba za kazalište nastala u suradnji s Bryanom Fritz i Chloe Chignell (Beursschouwburg, Bruxelles, 30.–31. listopada). Predaje pisanje i koordinira teorijski program na P.A.R.T.S.-u u Bruxellesu."
           } }
         ]
       }
@@ -258,12 +271,17 @@ window.SITE = {
       title: "Sun Cut: a lover’s dictionary",
       titleDisplay: "Sun Cut: a lover’s dictionary",
       artists: "Chloe Chignell",
-      date: "09-12-26",
-      times:     { en: ["18h"], fr: ["18h"], nl: ["18u"], hr: ["18h"] },
-      timesPage: { en: ["18h"], fr: ["18h"], nl: ["18u"], hr: ["18h"] },
-      location: { en: "METARAGE, St Gilles", fr: "METARAGE, Saint-Gilles", nl: "METARAGE, Sint-Gillis", hr: "METARAGE, Saint-Gilles" },
-      registration: "",
-      duration: "",
+      date: { en: "09 DEC ’26", fr: "09 DÉC ’26", nl: "09 DEC ’26", hr: "09. PRO ’26" },
+      times:     { en: ["15h doors open", "15h30 performance"], fr: ["15h ouverture des portes", "15h30 performance"], nl: ["15u deuren open", "15u30 voorstelling"], hr: ["15h otvaranje vrata", "15h30 izvedba"] },
+      timesPage: { en: ["15h doors open", "15h30 performance"], fr: ["15h ouverture des portes", "15h30 performance"], nl: ["15u deuren open", "15u30 voorstelling"], hr: ["15h otvaranje vrata", "15h30 izvedba"] },
+      location: { en: "Metarage, Saint-Gilles", fr: "Metarage, Saint-Gilles", nl: "Metarage, Sint-Gillis", hr: "Metarage, Saint-Gilles" },
+      registration: {
+        en: "Due to limited seating, please register by emailing <a href=\"mailto:info@histosentience.be\"><em>info@histosentience.be</em></a>.",
+        fr: "Le nombre de places étant limité, merci de réserver par e-mail à <a href=\"mailto:info@histosentience.be\"><em>info@histosentience.be</em></a>.",
+        nl: "Omdat het aantal plaatsen beperkt is, reserveer je via <a href=\"mailto:info@histosentience.be\"><em>info@histosentience.be</em></a>.",
+        hr: "Zbog ograničenog broja mjesta, molimo rezervirajte e-mailom na <a href=\"mailto:info@histosentience.be\"><em>info@histosentience.be</em></a>."
+      },
+      duration: { en: "2 hours", fr: "2 heures", nl: "2 uur", hr: "2 sata" },
 
       home: {
         back:  { src: "sun-cut-back-tex.jpg", pretextured: true, desktop: { x: 1186, y: 100, w: 587 }, mobile: { x: 168, y: 374, w: 212 } },
@@ -333,13 +351,13 @@ window.SITE = {
           ]
         },
         bios: [
-          { name: { en: "Chloe Chignell (AU)", fr: "Chloe Chignell (1993)", nl: "Chloe Chignell (AU)", hr: "Chloe Chignell (AU)" }, text: {
+          { name: "Chloe Chignell", text: {
             en: "is an artist working across text, choreography and publishing. Her work focuses on language within a choreographic frame. She invests in writing as a body building practice and in practices of experimental translation. In 2019, Chloe co-founded rile* a bookshop and project space for publication and performance with Sven Dehens. Her work has been presented across Europe and Australia including Beursschouwburg Brussels, Dancehouse Melbourne, NEXT Festival, Pavillon ADC Geneva, Batard Festival, Saal Biennale, Moving Words Norway, KAAP Bruges, Littérature etc. Paris, and Venice Biennale of Dance.",
             fr: "est une artiste dont la pratique traverse le texte, la chorégraphie et l’édition. Son travail se concentre sur le langage dans un cadre chorégraphique. Elle investit l’écriture comme pratique de construction du corps et s’intéresse aux pratiques de traduction expérimentale. En 2019, Chloe a co-fondé rile*, une librairie et project space dédiée à la publication et à la performance, avec Sven Dehens. Son travail a été présenté à travers l’Europe et l’Australie, notamment au Beursschouwburg Bruxelles, Dancehouse Melbourne, NEXT Festival, Pavillon ADC Genève, Batard Festival, Saal Biennale, Moving Words Norvège, KAAP Bruges, Littérature etc. Paris, et à la Biennale de danse de Venise.",
             nl: "is een kunstenaar die werkt met tekst, choreografie en uitgeven. Haar werk focust op taal binnen een choreografisch kader. Ze investeert in schrijven als lichaamsvormende praktijk en in praktijken van experimentele vertaling. In 2019 richtte Chloe samen met Sven Dehens rile* op, een boekhandel en projectruimte voor publicatie en performance. Haar werk werd getoond in Europa en Australië, onder meer in Beursschouwburg Brussel, Dancehouse Melbourne, NEXT Festival, Pavillon ADC Genève, Batard Festival, Saal Biennale, Moving Words Norway, KAAP Brugge, Littérature etc. Parijs en de Dansbiënnale van Venetië.",
             hr: "umjetnica je koja radi na presjeku teksta, koreografije i izdavaštva. Njezin rad usmjeren je na jezik unutar koreografskog okvira. Pisanju pristupa kao praksi izgradnje tijela, a bavi se i praksama eksperimentalnog prevođenja. Chloe je 2019. sa Svenom Dehensom suosnovala rile*, knjižaru i projektni prostor za izdavaštvo i izvedbu. Njezini radovi predstavljeni su diljem Europe i Australije, među ostalim u Beursschouwburgu u Bruxellesu, Dancehouseu u Melbourneu, na NEXT Festivalu, u Pavillonu ADC u Ženevi, na Batard Festivalu, Saal Biennalu, Moving Words Norway, u KAAP-u u Bruggeu, na Littérature etc. u Parizu te na Plesnom bijenalu u Veneciji."
           } },
-          { name: "Steph Holl-Trieu (DE)", text: {
+          { name: "Steph Holl-Trieu", text: {
             en: "is an artist and writer. Her work explores social relationships that shape modes of perception, the production of meaning and experience – both abstract and concrete. Through text, installation, sound, performative readings and role-play, she develops structures that deconstruct and reconfigure existing forms of meaning-making. She regards aesthetic experience as indeterminate and unruly; her works emerge through a process-oriented approach and frequently within collaborative or collective contexts. Her works have been presented at venues including the Shedhalle, Zurich, CH; HAU Berlin, DE; Kunstraum Niederösterreich, Vienna, AT; and Le Commun, Geneva, CH. Her art-critical texts have appeared in publications such as Texte zur Kunst and PW-Magazine.",
             fr: "",   // no French bio for Steph (not shown in French)
             nl: "is kunstenaar en schrijver. Haar werk onderzoekt de sociale relaties die vorm geven aan manieren van waarnemen, aan betekenisproductie en ervaring — zowel abstract als concreet. Via tekst, installatie, geluid, performatieve lezingen en rollenspel ontwikkelt ze structuren die bestaande vormen van betekenisgeving deconstrueren en herschikken. Ze beschouwt esthetische ervaring als onbepaald en weerbarstig; haar werken ontstaan vanuit een procesmatige aanpak en vaak in collaboratieve of collectieve contexten. Haar werk werd getoond in onder meer Shedhalle, Zürich, CH; HAU Berlin, DE; Kunstraum Niederösterreich, Wenen, AT; en Le Commun, Genève, CH. Haar kunstkritische teksten verschenen in publicaties als Texte zur Kunst en PW-Magazine.",
@@ -355,23 +373,17 @@ window.SITE = {
       title: "Dolls & Goats",
       titleDisplay: "Dolls & Goats",
       artists: "Zrinka Užbinec",
-      date: "10-12-26",
+      date: { en: "10 DEC ’26", fr: "10 DÉC ’26", nl: "10 DEC ’26", hr: "10. PRO ’26" },
       times:     { en: ["18h doors open", "19h performance"], fr: ["18h ouverture des portes", "19h performance"], nl: ["18u deuren open", "19u voorstelling"], hr: ["18h otvaranje vrata", "19h izvedba"] },
       timesPage: { en: ["18h doors open", "19h performance"], fr: ["18h ouverture des portes", "19h performance"], nl: ["18u deuren open", "19u voorstelling"], hr: ["18h otvaranje vrata", "19h izvedba"] },
-      note: {
-        en: "Doors open at 18:00 with a reading session, individual or shared, with books in the space. The performance begins at 19:00.",
-        fr: "Ouverture des portes à 18h avec une session de lecture, individuelle ou partagée, avec des livres dans l’espace. La performance commence à 19h.",
-        nl: "Deuren open om 18u met een leessessie, individueel of gedeeld, met boeken in de ruimte. De voorstelling begint om 19u.",
-        hr: "Vrata se otvaraju u 18h sesijom čitanja, individualnog ili zajedničkog, s knjigama u prostoru. Izvedba počinje u 19h."
-      },
-      location: { en: "au JUS, St Gilles", fr: "au JUS, Saint-Gilles", nl: "au JUS, Sint-Gillis", hr: "au JUS, Saint-Gilles" },
+      location: { en: "au JUS, Saint-Gilles", fr: "au JUS, Saint-Gilles", nl: "au JUS, Sint-Gillis", hr: "au JUS, Saint-Gilles" },
       registration: {
-        en: "Due to limited seating, please register by emailing <a href=\"mailto:mizimakov@gmail.com\"><em>mizimakov@gmail.com</em></a>.",
-        fr: "Le nombre de places étant limité, merci de réserver par e-mail à <a href=\"mailto:mizimakov@gmail.com\"><em>mizimakov@gmail.com</em></a>.",
-        nl: "Omdat het aantal plaatsen beperkt is, reserveer je via <a href=\"mailto:mizimakov@gmail.com\"><em>mizimakov@gmail.com</em></a>.",
-        hr: "Zbog ograničenog broja mjesta, molimo rezervirajte e-mailom na <a href=\"mailto:mizimakov@gmail.com\"><em>mizimakov@gmail.com</em></a>."
+        en: "Due to limited seating, please register by emailing <a href=\"mailto:info@histosentience.be\"><em>info@histosentience.be</em></a>.",
+        fr: "Le nombre de places étant limité, merci de réserver par e-mail à <a href=\"mailto:info@histosentience.be\"><em>info@histosentience.be</em></a>.",
+        nl: "Omdat het aantal plaatsen beperkt is, reserveer je via <a href=\"mailto:info@histosentience.be\"><em>info@histosentience.be</em></a>.",
+        hr: "Zbog ograničenog broja mjesta, molimo rezervirajte e-mailom na <a href=\"mailto:info@histosentience.be\"><em>info@histosentience.be</em></a>."
       },
-      duration: "",
+      duration: { en: "approx. 40 minutes", fr: "env. 40 minutes", nl: "ca. 40 minuten", hr: "oko 40 minuta" },
 
       home: {
         back:  { src: "dolls-back-tex.jpg", pretextured: true, desktop: { x: 1054, y: 631, w: 494 }, mobile: { x: 12,  y: 652, w: 214 } },
@@ -393,33 +405,74 @@ window.SITE = {
         descriptionStartsWithTitle: false,   // title shown large on its own line above
         description: {
           en: [
-            "It could start with a doll-like body. A doll-like body could lie naked on the lawn, float in the river, stare from the car. She could be frozen in the fridge, covered in plastic on the riverbank, lying in bed as if nothing had happened. A doll-like body could be missing; a day, missing for two, for a week, 96 hours with a hope to reappear, placed perfectly, washed neatly, always in the same pose, waiting to be found, seen on screen, avenged. It will probably start with a doll-unlike body sitting still.",
-            "The performance comes into the discussions with the libretto of ballet Coppélia. It is a choreographic manifesto about the relationship between cuteness and violence.",
-            "This performance parallels the research “Where do we go when the glass shatters”. With this it re-imagines the choreography through the perspective of its own skin."
+            "From 18:00 the space is open for reading, together or alone, with or without conversation, with books scattered around. (Turn a page, write down the memory of a movement, fossilise a sensation.) At 19:00 the doors close and the performance begins.",
+            "The performance could start with a doll-like body. A doll-like body could lie naked on the lawn, float in the river, stare from the car. She could be frozen in the fridge, covered in plastic on the riverbank, lying in bed as if nothing had happened. A doll-like body could be missing; a day, missing for two, for a week, 96 hours with a hope to reappear, placed perfectly, washed neatly, always in the same pose, waiting to be found, seen on screen, avenged. It will probably start with a doll-unlike body sitting still.",
+            "(Dolls and Goats is a choreographic solo which explodes Coppélia, exploring the range between cuteness and violence. It has changed its skin more than once. Its choreography has been skinned, tanned and then kept in a book. It is still danced.)"
           ],
           fr: [
-            "Cela pourrait commencer par un corps de poupée. Un corps de poupée pourrait gésir nu sur la pelouse, flotter dans la rivière, fixer depuis la voiture. Elle pourrait être congelée dans le frigo, recouverte de plastique sur la berge, allongée dans un lit comme si de rien n'était. Un corps de poupée pourrait disparaître ; un jour, disparue depuis deux, depuis une semaine, 96 heures avec l'espoir de réapparaître, placée parfaitement, lavée proprement, toujours dans la même pose, attendant d'être trouvée, vue à l'écran, vengée. Cela commencera probablement par un corps qui n'a rien d'une poupée, assis immobile.",
-            "La performance entre en dialogue avec le livret du ballet Coppélia. C'est un manifeste chorégraphique sur la relation entre la mignonnerie et la violence.",
-            "Cette performance accompagne la recherche « Where do we go when the glass shatters ». Elle réimagine ainsi la chorégraphie depuis la perspective de sa propre peau."
+            "À partir de 18h, l’espace est ouvert à la lecture, ensemble ou seul·e, avec ou sans conversation, parmi des livres éparpillés. (Tourner une page, noter le souvenir d’un mouvement, fossiliser une sensation.) À 19h, les portes se ferment et la performance commence.",
+            "La performance pourrait commencer par un corps de poupée. Un corps de poupée pourrait gésir nu sur la pelouse, flotter dans la rivière, fixer depuis la voiture. Elle pourrait être congelée dans le frigo, recouverte de plastique sur la berge, allongée dans un lit comme si de rien n’était. Un corps de poupée pourrait disparaître ; un jour, disparue depuis deux, depuis une semaine, 96 heures avec l’espoir de réapparaître, placée parfaitement, lavée proprement, toujours dans la même pose, attendant d’être trouvée, vue à l’écran, vengée. Cela commencera probablement par un corps qui n’a rien d’une poupée, assis immobile.",
+            "(Dolls & Goats est un solo chorégraphique qui fait éclater Coppélia, explorant l’éventail entre mignonnerie et violence. Il a changé de peau plus d’une fois. Sa chorégraphie a été écorchée, tannée, puis conservée dans un livre. Elle est toujours dansée.)"
           ],
           nl: [
-            "Het zou kunnen beginnen met een poppenlichaam. Een poppenlichaam zou naakt op het gazon kunnen liggen, in de rivier drijven, vanuit de auto staren. Ze zou bevroren in de koelkast kunnen liggen, in plastic gewikkeld op de rivieroever, in bed alsof er niets gebeurd is. Een poppenlichaam zou vermist kunnen zijn; een dag, twee dagen vermist, een week, 96 uur met de hoop weer op te duiken, perfect neergelegd, netjes gewassen, altijd in dezelfde pose, wachtend om gevonden te worden, op het scherm gezien, gewroken. Het zal waarschijnlijk beginnen met een lichaam dat niets van een pop heeft en stil zit.",
-            "De performance gaat in gesprek met het libretto van het ballet Coppélia. Het is een choreografisch manifest over de relatie tussen schattigheid en geweld.",
-            "Deze performance loopt parallel met het onderzoek ‘Where do we go when the glass shatters’. Daarmee herdenkt ze de choreografie vanuit het perspectief van haar eigen huid."
+            "Vanaf 18u is de ruimte open om te lezen, samen of alleen, met of zonder gesprek, tussen verspreide boeken. (Sla een bladzijde om, schrijf de herinnering aan een beweging op, fossiliseer een gewaarwording.) Om 19u gaan de deuren dicht en begint de voorstelling.",
+            "De voorstelling zou kunnen beginnen met een poppenlichaam. Een poppenlichaam zou naakt op het gazon kunnen liggen, in de rivier drijven, vanuit de auto staren. Ze zou bevroren in de koelkast kunnen liggen, in plastic gewikkeld op de rivieroever, in bed alsof er niets gebeurd is. Een poppenlichaam zou vermist kunnen zijn; een dag, twee dagen vermist, een week, 96 uur met de hoop weer op te duiken, perfect neergelegd, netjes gewassen, altijd in dezelfde pose, wachtend om gevonden te worden, op het scherm gezien, gewroken. Het zal waarschijnlijk beginnen met een lichaam dat niets van een pop heeft en stil zit.",
+            "(Dolls & Goats is een choreografische solo die Coppélia openbreekt en het bereik tussen schattigheid en geweld verkent. Het werk heeft meer dan eens van huid gewisseld. De choreografie werd gevild, gelooid en vervolgens bewaard in een boek. Ze wordt nog steeds gedanst.)"
           ],
           hr: [
-            "Moglo bi početi s tijelom nalik lutki. Tijelo nalik lutki moglo bi ležati golo na travnjaku, plutati rijekom, zuriti iz automobila. Mogla bi biti zamrznuta u hladnjaku, prekrivena plastikom na obali rijeke, ležati u krevetu kao da se ništa nije dogodilo. Tijelo nalik lutki moglo bi nestati; dan, dva dana nestala, tjedan, 96 sati s nadom da će se ponovno pojaviti, savršeno položena, uredno oprana, uvijek u istoj pozi, čekajući da bude pronađena, viđena na ekranu, osvećena. Vjerojatno će početi s tijelom koje nije nalik lutki, a koje mirno sjedi.",
-            "Izvedba ulazi u razgovor s libretom baleta Coppélia. Ona je koreografski manifest o odnosu između slatkoće i nasilja.",
-            "Ova izvedba paralelna je s istraživanjem „Where do we go when the glass shatters”. Time koreografiju ponovno zamišlja iz perspektive vlastite kože."
+            "Od 18 sati prostor je otvoren za čitanje, zajedničko ili individualno, s razgovorom ili bez njega, uz knjige razasute po prostoru. (Okrenite stranicu, zapišite sjećanje na pokret, fosilizirajte senzaciju.) U 19 sati vrata se zatvaraju i počinje izvedba.",
+            "Izvedba bi mogla započeti s tijelom nalik lutki. Tijelo nalik lutki moglo bi ležati golo na travnjaku, plutati rijekom, piljiti iz automobila. Moglo bi biti smrznuto u hladnjaku, prekriveno plastikom na obali rijeke, ležati u krevetu kao da se ništa nije dogodilo. Tijelo nalik lutki moglo bi nestati; na dan, dva, tjedan dana, 96 sati, s nadom da će se ponovno pojaviti, savršeno postavljeno, uredno oprano, uvijek u istoj pozi, čekajući da bude pronađeno, viđeno na ekranu, osvećeno. Započet će, vjerojatno, s tijelom koje nije nalik lutki, a koje mirno sjedi.",
+            "(Lutke i koze koreografski je solo koje raskraja Coppéliu istražujući raspon između slatkosti i nasilja. Više je puta promijenilo kožu. Koreografija je oderana, pa štavljena i spremljena u knjigu. I dalje se pleše.)"
           ]
         },
-        credits: [],
+        credits: {
+          en: [
+            "Idea, choreography and performance: Zrinka Užbinec",
+            "Music: Bojan Rokvić",
+            "Texts: Ana Fazekaš, Zrinka Užbinec, Rosa Postlethwaite",
+            "Edited by: Ana Fazekaš",
+            "Design: Mladen Donadini",
+            "Artistic collaborator, costume: Silvio Vujičić",
+            "Choreographic support: Antonia Dorbić, Kasia Kania, Ana Kreitmeyer",
+            "The project is funded by the Ministry of Culture and Media of the Republic of Croatia, the City of Zagreb and the Kultura nova Foundation, which supports the work of the Centre for Dramatic Art."
+          ],
+          fr: [
+            "Idée, chorégraphie et performance : Zrinka Užbinec",
+            "Musique : Bojan Rokvić",
+            "Textes : Ana Fazekaš, Zrinka Užbinec, Rosa Postlethwaite",
+            "Édition : Ana Fazekaš",
+            "Design : Mladen Donadini",
+            "Collaboration artistique, costume : Silvio Vujičić",
+            "Soutien chorégraphique : Antonia Dorbić, Kasia Kania, Ana Kreitmeyer",
+            "Le projet est financé par le Ministère de la Culture et des Médias de la République de Croatie, la Ville de Zagreb et la Fondation Kultura nova, qui soutient le travail du Centre for Dramatic Art."
+          ],
+          nl: [
+            "Idee, choreografie en performance: Zrinka Užbinec",
+            "Muziek: Bojan Rokvić",
+            "Teksten: Ana Fazekaš, Zrinka Užbinec, Rosa Postlethwaite",
+            "Redactie: Ana Fazekaš",
+            "Ontwerp: Mladen Donadini",
+            "Artistieke medewerking, kostuum: Silvio Vujičić",
+            "Choreografische ondersteuning: Antonia Dorbić, Kasia Kania, Ana Kreitmeyer",
+            "Het project wordt gefinancierd door het Ministerie van Cultuur en Media van de Republiek Kroatië, de Stad Zagreb en de Kultura nova Foundation, die het werk van het Centre for Dramatic Art ondersteunt."
+          ],
+          hr: [
+            "Ideja, koreografija i izvedba: Zrinka Užbinec",
+            "Glazba: Bojan Rokvić",
+            "Tekstovi: Ana Fazekaš, Zrinka Užbinec, Rosa Postlethwaite",
+            "Uredila: Ana Fazekaš",
+            "Oblikovanje: Mladen Donadini",
+            "Umjetnički suradnik, kostim: Silvio Vujičić",
+            "Koreografska podrška: Antonia Dorbić, Kasia Kania, Ana Kreitmeyer",
+            "Projekt je financiran sredstvima Ministarstva kulture i medija RH, Grada Zagreba i Zaklade Kultura nova, koja podržava rad Centra za dramsku umjetnost."
+          ]
+        },
         bios: [
           { name: "Zrinka Užbinec", text: {
-            en: "(they/she) dances and works with choreography, shaping it through different media and materials. They often choose collaborative projects and explore the emancipatory potentials of the dancing body. In their work, they approach choreography as a way of thinking, researching, and creating relations through dance, text, video, drawing, objects, and other materials. They hold an MA in Choreography and Performance from JLU Giessen and a practice research PhD from C-DaRE (Centre for Dance Research), Coventry University. Their doctoral research, Moving Between Cuteness and Violence: A Choreographic Investigation, explores the relationship between cuteness and violence and the metastability of choreography. Zrinka enjoys facilitating workshops that question dance and choreography as discipline-specific skill sets. They hold the title of Docent (equivalent to Assistant Professor) at the Dance Department of the Academy of Dramatic Art, University of Zagreb, where they occasionally teach as a guest lecturer.",
-            fr: "(iel/elle) danse et travaille la chorégraphie, qu'iel façonne à travers différents médiums et matériaux. Iel choisit souvent des projets collaboratifs et explore les potentiels émancipateurs du corps dansant. Dans son travail, iel aborde la chorégraphie comme une manière de penser, de chercher et de créer des relations à travers la danse, le texte, la vidéo, le dessin, les objets et d'autres matériaux. Iel est titulaire d'un master en chorégraphie et performance de la JLU Giessen et d'un doctorat en recherche par la pratique du C-DaRE (Centre for Dance Research), Coventry University. Sa recherche doctorale, Moving Between Cuteness and Violence: A Choreographic Investigation, explore la relation entre la mignonnerie et la violence ainsi que la métastabilité de la chorégraphie. Zrinka aime animer des ateliers qui questionnent la danse et la chorégraphie en tant que savoir-faire propres à une discipline. Iel porte le titre de Docent (équivalent de professeur·e assistant·e) au département de danse de l'Académie d'art dramatique de l'Université de Zagreb, où iel enseigne occasionnellement comme intervenant·e invité·e.",
-            nl: "(hen/zij) danst en werkt met choreografie, die ze vormgeeft via verschillende media en materialen. Ze kiest vaak voor collaboratieve projecten en onderzoekt het emancipatorische potentieel van het dansende lichaam. In haar werk benadert ze choreografie als een manier van denken, onderzoeken en relaties creëren via dans, tekst, video, tekening, objecten en andere materialen. Ze behaalde een MA in Choreografie en Performance aan de JLU Giessen en een praktijkgericht doctoraat aan C-DaRE (Centre for Dance Research), Coventry University. Haar doctoraatsonderzoek, Moving Between Cuteness and Violence: A Choreographic Investigation, onderzoekt de relatie tussen schattigheid en geweld en de metastabiliteit van choreografie. Zrinka begeleidt graag workshops die dans en choreografie als disciplinegebonden vaardigheden bevragen. Ze draagt de titel Docent (gelijkwaardig aan assistent-professor) aan de dansafdeling van de Academie voor Dramatische Kunst van de Universiteit van Zagreb, waar ze af en toe als gastdocent lesgeeft.",
-            hr: "(oni/ona) pleše i radi s koreografijom, oblikujući je kroz različite medije i materijale. Često bira suradničke projekte i istražuje emancipacijske potencijale plešućeg tijela. U svom radu koreografiji pristupa kao načinu mišljenja, istraživanja i stvaranja odnosa kroz ples, tekst, video, crtež, predmete i druge materijale. Magistrirala je koreografiju i izvedbu na JLU Giessen, a doktorirala istraživanjem kroz praksu na C-DaRE (Centre for Dance Research), Sveučilište u Coventryju. Njezino doktorsko istraživanje, Moving Between Cuteness and Violence: A Choreographic Investigation, istražuje odnos između slatkoće i nasilja te metastabilnost koreografije. Zrinka rado vodi radionice koje propituju ples i koreografiju kao skupove vještina vezanih uz disciplinu. Nositeljica je naslova docentice na Odsjeku za ples Akademije dramske umjetnosti Sveučilišta u Zagrebu, gdje povremeno predaje kao gostujuća predavačica."
+            en: "(they/she) is a choreographer, dance artist and researcher. They hold a practice-led PhD in choreography from the Centre for Dance Research (C-DaRE), Coventry University, and an MA in Choreography and Performance from JLU Giessen. They were a long-standing member of the collective BADco. (2006–2020) and today work as an author and performer in Croatia and internationally. Their work explores choreography as a method, the relationship between dance, text, objects and drawing, and the metastability of performative and bodily states.",
+            fr: "(iel/elle) est chorégraphe, artiste chorégraphique et chercheuse. Iel est titulaire d’un doctorat en recherche par la pratique en chorégraphie du Centre for Dance Research (C-DaRE), Coventry University, et d’un master en chorégraphie et performance de la JLU Giessen. Iel a longtemps été membre du collectif BADco. (2006–2020) et travaille aujourd’hui comme autrice et performeuse en Croatie et à l’international. Son travail explore la chorégraphie comme méthode, les relations entre danse, texte, objets et dessin, ainsi que la métastabilité des états performatifs et corporels.",
+            nl: "(hen/zij) is choreograaf, danskunstenaar en onderzoeker. Ze behaalde een praktijkgericht doctoraat in choreografie aan het Centre for Dance Research (C-DaRE), Coventry University, en een MA in Choreografie en Performance aan de JLU Giessen. Ze was jarenlang lid van het collectief BADco. (2006–2020) en werkt vandaag als maker en performer in Kroatië en internationaal. In haar werk onderzoekt ze choreografie als methode, de relatie tussen dans, tekst, objecten en tekenen, en de metastabiliteit van performatieve en lichamelijke toestanden.",
+            hr: "(oni/ona) je koreografkinja, plesna umjetnica i istraživačica. Doktorirala je praksom vođeno istraživanje koreografije pri Centre for Dance Research (C-DaRE), Coventry University, a završila MA Choreography and Performance na JLU Giessen. Bila je dugogodišnja članica kolektiva BADco. (2006.–2020.), a danas djeluje kao autorica i izvođačica u Hrvatskoj i međunarodno. U radu istražuje koreografiju kao metodu, odnos plesa, teksta, objekata i crtanja, te metastabilnost izvedbenih i tjelesnih stanja."
           } }
         ]
       }

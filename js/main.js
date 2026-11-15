@@ -164,7 +164,7 @@
       addFloat(t, n++, 34, "home");
 
       var d = h("div", "date-block small");
-      d.textContent = p.date + "\n" + tr(p.times).join("\n") + "\n\n" + tr(p.location);
+      d.textContent = tr(p.date) + "\n" + tr(p.times).join("\n") + "\n\n" + tr(p.location);
       stage.appendChild(link(place(d, p.home.dateBlock), p.id));
       addFloat(d, n++, 30, "home");
     });
@@ -184,7 +184,16 @@
     title.addEventListener("blur", function () { document.body.classList.remove("title-hover"); });
     title.addEventListener("click", function () { location.hash = "about"; });
 
-    // 6. language switch
+    // 6. booking line + small "about" link (phones only)
+    if (S.booking) {
+      var bk = h("div", "booking small", tr(S.booking.text) + '<br><a href="mailto:' + S.booking.email + '">' + S.booking.email + "</a>");
+      stage.appendChild(place(bk, S.booking.position));
+    }
+    var ab = h("a", "about-link small", ui("aboutLink") + " →");
+    ab.href = "#about";
+    stage.appendChild(place(ab, { desktop: { x: 0, y: 0 }, mobile: { x: 318, y: 52 } }));
+
+    // 6b. language switch
     stage.appendChild(langSwitch("home-lang"));
   }
 
@@ -208,7 +217,7 @@
     var list = h("div", "program");
     S.performances.forEach(function (p, i) {
       var a = h("a", "program-line big",
-        '<span class="pd">' + p.date + '</span> <span class="pa">' + tr(p.artists) + '</span> <span class="pt">' + (p.titleDisplay || p.title) + "</span>");
+        '<span class="pd">' + tr(p.date) + '</span> <span class="pa">' + tr(p.artists) + '</span> <span class="pt">' + (p.titleDisplay || p.title) + "</span>");
       a.href = "#" + p.id;
       list.appendChild(a);
       addFloat(a, 40 + i, 9, "sheet", 0.06);
@@ -273,7 +282,7 @@
     if (P.faded && P.faded.desktop.y < 520 && P.faded.desktop.x > ip.x) right = P.faded.desktop.x - 40;
     right = P.infoWidth ? ip.x + P.infoWidth : Math.min(right, ip.x + 880);
     var info = h("div", "perf-info");
-    info.appendChild(h("div", "big", [p.date].concat(tr(P.timesPage || p.timesPage || p.times)).join("<br>")));
+    info.appendChild(h("div", "big", [tr(p.date)].concat(tr(P.timesPage || p.timesPage || p.times)).join("<br>")));
     if (tr(p.location)) info.appendChild(h("div", "small", venueLink(tr(p.location))));
     if (tr(p.note)) info.appendChild(h("div", "small", tr(p.note)));
     if (tr(S.afterTalkNote)) info.appendChild(h("div", "small", tr(S.afterTalkNote)));
