@@ -490,3 +490,16 @@ html.is-mobile .home-lang { position: absolute; }
 .booking a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .15em; }
 .about-link { display: none; position: absolute; z-index: 6; }
 html.is-mobile .about-link { display: block; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+
+/* language menu: HRV / EN / FR / NL, top left on computers */
+html:not(.is-mobile) .home-lang {
+  top: calc(34 * var(--u)); bottom: auto; left: calc(40 * var(--u));
+  flex-direction: row; gap: 0; align-items: baseline;
+}
+.home-lang .lang:not(:last-child)::after { content: "\00a0/"; margin-right: .45em; text-decoration: none; display: inline-block; }
+html.is-mobile .home-lang { gap: 0; }
+html.is-mobile .home-lang { top: calc(930 * var(--u)); bottom: auto; }
+
+.booking { white-space: nowrap; }
+html.is-mobile .booking { white-space: normal; }
+.perf-info .details { line-height: 1.5; }

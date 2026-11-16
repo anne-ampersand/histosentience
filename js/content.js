@@ -40,10 +40,10 @@
 
 window.SITE = {
 
-  /* Language menu: bottom-left corner of the homepage (top-right on phones),
+  /* Language menu: top-left corner of the homepage (bottom on phones),
      and a small fold-out menu next to the X on the other pages. */
   languages: ["hr", "en", "fr", "nl"],
-  languageNames: { hr: "hrvatski", en: "english", fr: "français", nl: "nederlands" },
+  languageNames: { hr: "HRV", en: "EN", fr: "FR", nl: "NL" },
   defaultLanguage: "en",
 
   title: "HISTOSENTIENCE",
@@ -51,13 +51,13 @@ window.SITE = {
   /* Booking line on the homepage, under the title */
   booking: {
     text: {
-      en: "Free entry upon reservation:",
-      fr: "Entrée libre sur réservation :",
-      nl: "Gratis toegang na reservatie:",
-      hr: "Ulaz slobodan uz rezervaciju:"
+      en: "Free entry upon reservation, donation at the door:",
+      fr: "Entrée libre sur réservation, donation à l’entrée :",
+      nl: "Gratis toegang na reservatie, bijdrage aan de deur:",
+      hr: "Ulaz slobodan uz rezervaciju, donacija na ulazu:"
     },
     email: "info@histosentience.be",
-    position: { desktop: { x: 333, y: 905 }, mobile: { x: 12, y: 896, w: 200 } }
+    position: { desktop: { x: 330, y: 34 }, mobile: { x: 12, y: 862, w: 205 } }
   },
   titlePosition: { desktop: { x: 333, y: 818 }, mobile: { x: 12, y: 12 } },
 
@@ -125,10 +125,10 @@ window.SITE = {
     /* Small notes under the programme (uppercase, like the seating note) */
     notes: [
       {
-        en: "Tickets are free upon reservation (suggested donation 10 EUR per performance or 25 EUR for all three).",
-        fr: "Entrée gratuite sur réservation (don suggéré : 10 EUR par performance ou 25 EUR pour les trois).",
-        nl: "Gratis toegang na reservatie (voorgestelde bijdrage: 10 EUR per voorstelling of 25 EUR voor alle drie).",
-        hr: "Ulaz je slobodan uz rezervaciju (preporučena donacija: 10 EUR po izvedbi ili 25 EUR za sve tri)."
+        en: "Free entry upon reservation, donation at the door (suggested 10 EUR per performance or 25 EUR for all three).",
+        fr: "Entrée libre sur réservation, donation à l’entrée (suggestion : 10 EUR par performance ou 25 EUR pour les trois).",
+        nl: "Gratis toegang na reservatie, bijdrage aan de deur (voorgesteld: 10 EUR per voorstelling of 25 EUR voor alle drie).",
+        hr: "Ulaz je slobodan uz rezervaciju, donacija na ulazu (preporučeno: 10 EUR po izvedbi ili 25 EUR za sve tri)."
       },
       {
         en: "Each performance is followed by a reflection session — an after talk amongst the showing artists.",
@@ -154,6 +154,14 @@ window.SITE = {
       { label: { en: "Website and design", fr: "Site web et design", nl: "Website en ontwerp", hr: "Web stranica i dizajn" },
         text: "Marko Gutić Mižimakov" }
     ]
+  },
+
+  /* Shown on every performance page, under the venue */
+  entryNote: {
+    en: "Free entry, donation at the door (suggested 10 EUR, or 25 EUR for all three).",
+    fr: "Entrée libre, donation à l’entrée (suggestion : 10 EUR, ou 25 EUR pour les trois).",
+    nl: "Gratis toegang, bijdrage aan de deur (voorgesteld: 10 EUR, of 25 EUR voor alle drie).",
+    hr: "Ulaz slobodan, donacija na ulazu (preporučeno: 10 EUR ili 25 EUR za sve tri)."
   },
 
   /* Shown on every performance page, under the date (leave "" to hide) */
@@ -223,28 +231,28 @@ window.SITE = {
         descriptionStartsWithTitle: true,   // "2009 is a performance…" (title shown large at the start)
         description: {
           en: [
-            "is a performance that, through objects, sound, video and choreography, reflects on depiction, technology and historicity, and uses argument — the practice of persuasion — as a performative device.",
-            "The performance is organized around the encounter of two performers with oddly grouped items. Clustered portraits of public figures, reconstructed from memory, stand alongside a still life composed of objects refracted through a mirrored sphere. Over the course of the performance, we observe the gathered objects in a material time caught up in social relations of power and reproduction that evade us.",
-            "A rendering of a nameless cityscape in aeropittura style further choreographs the space. Speed and altitude break down into dream-like forms of “the future”. Fetishizing bird’s-eye view, seeking to represent representation as such, for the Italian futurists, aeropittura was to impress its viewers: look what technology can do! 2 0 0 9 borrows this disputed backdrop for a final call to action.",
-            "We treat the long first decade of the twenty-first century as a memorable epoch, a coming-of-age story of sorts, today distant enough to return as a problem and demand interpretation. Looking back, we ask how we became available to the popular forms that now organize us."
+            "is a performance in an exhibition setting that reflects on depiction, technology and historicity, and uses argument—the practice of persuasion—as a performative device.",
+            "Two film characters, Печал and Kälte, dialoguing through walkie talkies, meet in a world disclosing itself in fragments including a Still Life, Nameless Cityscape, and Memory Ribbons. Before physically sharing weight, they communicate a set of coordinates that reflect on coming into political consciousness.",
+            "The performance is organized around this encounter with oddly grouped items. Clustered portraits of public figures printed on canvas and cut into ribbons, reconstructed from memory, stand alongside a still life composed of objects refracted through a mirrored sphere. Over the course of the performance, the gathered objects amass referentiality underlining social relations of power and reproduction. The Nameless Cityscape displays an appropriated Aeropittura style painting. Speed and altitude break down into dream-like forms of “the future”. Fetishizing bird’s-eye view, seeking to represent representation as such, for the Italian futurists, Aeropittura was to impress its viewers: look what technology can do! 2 0 0 9 borrows this disputed backdrop for a final call to action.",
+            "Ripped out of the calendar, for us, the title points to the long first decade of the twenty-first century, a memorable epoch, a coming-of-age story of sorts, today distant enough to return as a problem and demand interpretation. Looking back, we ask how we became available to the popular forms that now organize us."
           ],
           fr: [
-            "est une performance qui, à travers des objets, du son, de la vidéo et de la chorégraphie, réfléchit à la représentation, à la technologie et à l'historicité, et utilise l'argumentation — l'art de la persuasion — comme dispositif performatif.",
-            "La performance s'organise autour de la rencontre de deux performeur·euses avec des objets étrangement regroupés. Des portraits de personnalités publiques, reconstitués de mémoire et réunis en grappes, côtoient une nature morte composée d'objets réfractés par une sphère miroir. Au fil de la performance, nous observons les objets rassemblés dans un temps matériel pris dans des rapports sociaux de pouvoir et de reproduction qui nous échappent.",
-            "Le rendu d'un paysage urbain anonyme dans le style de l'aeropittura chorégraphie lui aussi l'espace. La vitesse et l'altitude se décomposent en formes oniriques du « futur ». Fétichisant la vue à vol d'oiseau, cherchant à représenter la représentation en tant que telle, l'aeropittura devait, pour les futuristes italiens, impressionner ses spectateurs : regardez ce que la technologie peut faire ! 2 0 0 9 emprunte cette toile de fond controversée pour un ultime appel à l'action.",
-            "Nous traitons la longue première décennie du XXIe siècle comme une époque mémorable, une sorte de récit d'apprentissage, aujourd'hui assez lointaine pour revenir comme un problème et exiger une interprétation. En regardant en arrière, nous nous demandons comment nous sommes devenu·es disponibles aux formes populaires qui nous organisent aujourd'hui."
+            "est une performance en contexte d’exposition qui réfléchit à la représentation, à la technologie et à l’historicité, et utilise l’argumentation — l’art de la persuasion — comme dispositif performatif.",
+            "Deux personnages de film, Печал et Kälte, dialoguant par talkie-walkie, se rencontrent dans un monde qui se dévoile par fragments, parmi lesquels un Still Life, un Nameless Cityscape et des Memory Ribbons. Avant de partager physiquement leur poids, ils se transmettent un ensemble de coordonnées qui réfléchissent à l’éveil d’une conscience politique.",
+            "La performance s’organise autour de cette rencontre avec des objets étrangement regroupés. Des portraits de personnalités publiques imprimés sur toile et découpés en rubans, reconstitués de mémoire et réunis en grappes, côtoient une nature morte composée d’objets réfractés par une sphère miroir. Au fil de la performance, les objets rassemblés accumulent une référentialité qui souligne des rapports sociaux de pouvoir et de reproduction. Le Nameless Cityscape présente une peinture appropriée dans le style de l’Aeropittura. La vitesse et l’altitude se décomposent en formes oniriques du « futur ». Fétichisant la vue à vol d’oiseau, cherchant à représenter la représentation en tant que telle, l’Aeropittura devait, pour les futuristes italiens, impressionner ses spectateurs : regardez ce que la technologie peut faire ! 2 0 0 9 emprunte cette toile de fond controversée pour un ultime appel à l’action.",
+            "Arraché au calendrier, le titre désigne pour nous la longue première décennie du XXIe siècle, une époque mémorable, une sorte de récit d’apprentissage, aujourd’hui assez lointaine pour revenir comme un problème et exiger une interprétation. En regardant en arrière, nous nous demandons comment nous sommes devenu·es disponibles aux formes populaires qui nous organisent aujourd’hui."
           ],
           nl: [
-            "is een performance die via objecten, geluid, video en choreografie reflecteert over verbeelding, technologie en historiciteit, en argumentatie — de praktijk van het overtuigen — inzet als performatief middel.",
-            "De performance draait rond de ontmoeting van twee performers met vreemd gegroepeerde voorwerpen. Gebundelde portretten van publieke figuren, uit het geheugen gereconstrueerd, staan naast een stilleven van objecten die gebroken worden door een spiegelende bol. In de loop van de performance zien we de verzamelde objecten in een materiële tijd die verstrikt is in sociale verhoudingen van macht en reproductie die ons ontglippen.",
-            "Een weergave van een naamloos stadsgezicht in aeropittura-stijl choreografeert de ruimte verder. Snelheid en hoogte vallen uiteen in droomachtige vormen van ‘de toekomst’. Voor de Italiaanse futuristen, die het vogelperspectief fetisjiseerden en de representatie als zodanig wilden verbeelden, moest de aeropittura de toeschouwer imponeren: kijk wat technologie kan! 2 0 0 9 leent dit omstreden decor voor een laatste oproep tot actie.",
-            "We behandelen het lange eerste decennium van de eenentwintigste eeuw als een gedenkwaardig tijdperk, een soort coming-of-ageverhaal, dat nu ver genoeg achter ons ligt om terug te keren als een probleem dat om interpretatie vraagt. Terugblikkend vragen we ons af hoe we beschikbaar werden voor de populaire vormen die ons vandaag organiseren."
+            "is een performance in een tentoonstellingscontext die reflecteert over verbeelding, technologie en historiciteit, en argumentatie — de praktijk van het overtuigen — inzet als performatief middel.",
+            "Twee filmpersonages, Печал en Kälte, die via walkietalkies met elkaar praten, ontmoeten elkaar in een wereld die zich in fragmenten prijsgeeft, waaronder een Still Life, een Nameless Cityscape en Memory Ribbons. Voor ze fysiek elkaars gewicht delen, wisselen ze een reeks coördinaten uit die reflecteren over het ontwaken van politiek bewustzijn.",
+            "De performance draait rond deze ontmoeting met vreemd gegroepeerde voorwerpen. Gebundelde portretten van publieke figuren, op canvas gedrukt en in linten geknipt, uit het geheugen gereconstrueerd, staan naast een stilleven van objecten die gebroken worden door een spiegelende bol. In de loop van de performance stapelen de verzamelde objecten verwijzingen op die sociale verhoudingen van macht en reproductie blootleggen. De Nameless Cityscape toont een toegeëigend schilderij in Aeropittura-stijl. Snelheid en hoogte vallen uiteen in droomachtige vormen van ‘de toekomst’. Voor de Italiaanse futuristen, die het vogelperspectief fetisjiseerden en de representatie als zodanig wilden verbeelden, moest de Aeropittura de toeschouwer imponeren: kijk wat technologie kan! 2 0 0 9 leent dit omstreden decor voor een laatste oproep tot actie.",
+            "Uit de kalender gescheurd verwijst de titel voor ons naar het lange eerste decennium van de eenentwintigste eeuw, een gedenkwaardig tijdperk, een soort coming-of-ageverhaal, dat nu ver genoeg achter ons ligt om terug te keren als een probleem dat om interpretatie vraagt. Terugblikkend vragen we ons af hoe we beschikbaar werden voor de populaire vormen die ons vandaag organiseren."
           ],
           hr: [
-            "je izvedba koja kroz predmete, zvuk, video i koreografiju promišlja prikazivanje, tehnologiju i povijesnost, a argumentaciju — praksu uvjeravanja — koristi kao izvedbeno sredstvo.",
-            "Izvedba je organizirana oko susreta dvoje izvođača s neobično grupiranim predmetima. Skupine portreta javnih osoba, rekonstruiranih po sjećanju, stoje uz mrtvu prirodu sastavljenu od predmeta prelomljenih kroz zrcalnu kuglu. Tijekom izvedbe promatramo okupljene predmete u materijalnom vremenu zahvaćenom društvenim odnosima moći i reprodukcije koji nam izmiču.",
-            "Prikaz bezimenog gradskog krajolika u stilu aeropitture dodatno koreografira prostor. Brzina i visina raspadaju se u snolike oblike „budućnosti”. Fetišizirajući ptičju perspektivu i nastojeći prikazati samo prikazivanje, aeropittura je za talijanske futuriste trebala impresionirati gledatelje: pogledajte što tehnologija može! 2 0 0 9 posuđuje tu spornu pozadinu za završni poziv na djelovanje.",
-            "Dugo prvo desetljeće dvadeset i prvog stoljeća tretiramo kao pamtljivu epohu, svojevrsnu priču o odrastanju, danas dovoljno daleku da se vrati kao problem i zatraži tumačenje. Gledajući unatrag, pitamo se kako smo postali dostupni popularnim formama koje nas danas organiziraju."
+            "je izvedba u izložbenom okruženju koja promišlja prikazivanje, tehnologiju i povijesnost, a argumentaciju — praksu uvjeravanja — koristi kao izvedbeno sredstvo.",
+            "Dva filmska lika, Печал i Kälte, koji razgovaraju preko voki-tokija, susreću se u svijetu koji se otkriva u fragmentima, među kojima su Still Life, Nameless Cityscape i Memory Ribbons. Prije nego što fizički podijele težinu, razmjenjuju niz koordinata koje promišljaju dolazak do političke svijesti.",
+            "Izvedba je organizirana oko tog susreta s neobično grupiranim predmetima. Skupine portreta javnih osoba, tiskanih na platnu i izrezanih u vrpce, rekonstruiranih po sjećanju, stoje uz mrtvu prirodu sastavljenu od predmeta prelomljenih kroz zrcalnu kuglu. Tijekom izvedbe okupljeni predmeti nakupljaju referencijalnost koja ističe društvene odnose moći i reprodukcije. Nameless Cityscape prikazuje aproprijiranu sliku u stilu aeropitture. Brzina i visina raspadaju se u snolike oblike „budućnosti”. Fetišizirajući ptičju perspektivu i nastojeći prikazati samo prikazivanje, aeropittura je za talijanske futuriste trebala impresionirati gledatelje: pogledajte što tehnologija može! 2 0 0 9 posuđuje tu spornu pozadinu za završni poziv na djelovanje.",
+            "Istrgnut iz kalendara, naslov za nas upućuje na dugo prvo desetljeće dvadeset i prvog stoljeća, pamtljivu epohu, svojevrsnu priču o odrastanju, danas dovoljno daleku da se vrati kao problem i zatraži tumačenje. Gledajući unatrag, pitamo se kako smo postali dostupni popularnim formama koje nas danas organiziraju."
           ]
         },
         credits: [],

@@ -28,8 +28,6 @@
     var saved = null;
     try { saved = localStorage.getItem("histo-lang"); } catch (e) {}
     if (saved && LANGS.indexOf(saved) > -1) return saved;
-    var nav = (navigator.languages || [navigator.language || ""]).map(function (l) { return String(l).slice(0, 2).toLowerCase(); });
-    for (var i = 0; i < nav.length; i++) if (LANGS.indexOf(nav[i]) > -1) return nav[i];
     return S.defaultLanguage || "en";
   }
   function setLanguage(l) {
@@ -186,7 +184,7 @@
 
     // 6. booking line + small "about" link (phones only)
     if (S.booking) {
-      var bk = h("div", "booking small", tr(S.booking.text) + '<br><a href="mailto:' + S.booking.email + '">' + S.booking.email + "</a>");
+      var bk = h("div", "booking small", tr(S.booking.text) + ' <a href="mailto:' + S.booking.email + '">' + S.booking.email + "</a>");
       stage.appendChild(place(bk, S.booking.position));
     }
     var ab = h("a", "about-link small", ui("aboutLink") + " →");
@@ -283,11 +281,15 @@
     right = P.infoWidth ? ip.x + P.infoWidth : Math.min(right, ip.x + 880);
     var info = h("div", "perf-info");
     info.appendChild(h("div", "big", [tr(p.date)].concat(tr(P.timesPage || p.timesPage || p.times)).join("<br>")));
-    if (tr(p.location)) info.appendChild(h("div", "small", venueLink(tr(p.location))));
-    if (tr(p.note)) info.appendChild(h("div", "small", tr(p.note)));
-    if (tr(S.afterTalkNote)) info.appendChild(h("div", "small", tr(S.afterTalkNote)));
-    if (tr(p.registration)) info.appendChild(h("div", "small", tr(p.registration)));
-    if (tr(p.duration)) info.appendChild(h("div", "small", ui("duration") + ": " + tr(p.duration)));
+    // practical details as one running paragraph
+    var bits = [];
+    if (tr(p.location)) bits.push(venueLink(tr(p.location)));
+    if (tr(S.entryNote)) bits.push(tr(S.entryNote));
+    if (tr(p.note)) bits.push(tr(p.note));
+    if (tr(S.afterTalkNote)) bits.push(tr(S.afterTalkNote));
+    if (tr(p.registration)) bits.push(tr(p.registration));
+    if (tr(p.duration)) bits.push(ui("duration") + ": " + tr(p.duration));
+    if (bits.length) info.appendChild(h("div", "small details", bits.map(function (b) { return /[.!?)]$/.test(b.replace(/<[^>]+>/g, "").trim()) ? b : b + "."; }).join(" ")));
     stage.appendChild(sPlace(info, { x: ip.x, y: ip.y, w: right - ip.x }));
 
     if (P.faded) {
