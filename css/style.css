@@ -503,3 +503,44 @@ html.is-mobile .home-lang { top: calc(930 * var(--u)); bottom: auto; }
 .booking { white-space: nowrap; }
 html.is-mobile .booking { white-space: normal; }
 .perf-info .details { line-height: 1.5; }
+
+/* ================================================================ November 2026 update
+   serif voice, hairlines, tinted faded photos, warmer paper              */
+@font-face { font-family: "Histo Serif"; src: url("../fonts/termes-regular.woff") format("woff"); font-style: normal; font-display: swap; }
+@font-face { font-family: "Histo Serif"; src: url("../fonts/termes-italic.woff") format("woff"); font-style: italic; font-display: swap; }
+:root {
+  --serif: "Histo Serif", "Times New Roman", Times, serif;
+  --title-style: normal;     /* performance titles: normal (upright) or italic */
+  --paper-tint: #f2f0ec;     /* colour laid over all the paper; #fff = none */
+}
+/* titles and quotes in the serif; all practical information stays in the mono */
+.title-block .t, .perf-text .lead, .program-line .pt { font-family: var(--serif); font-style: var(--title-style); letter-spacing: 0; }
+.title-block .t { font-size: calc(var(--fs-big) * 1.45 * var(--u) * var(--ts, 1)); }
+.perf-text .lead { font-size: 1.7em; }
+.program-line .pt { font-weight: 400; font-size: 1.3em; }
+.about-quote blockquote { font-family: var(--serif); font-style: italic; font-size: 1.35em; line-height: 1.2; letter-spacing: 0; }
+.perf-text .epigraph { font-family: var(--serif); font-style: italic; letter-spacing: 0; }
+.title-block.inline .a { margin-left: .9em; text-indent: 0; }
+
+
+/* hairlines: title to dates on the homepage (they draw in, then follow the floating text) */
+.home-lines { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 3; }
+.home-lines line { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.4s ease forwards 1.2s; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) { .home-lines line { animation: none; stroke-dashoffset: 0; } }
+/* dotted leader between artist and title in the About programme list */
+.about .program-line .pt::before { content: ""; display: inline-block; width: 2.2em; margin: 0 .45em .28em .25em; border-top: 1px dotted currentColor; vertical-align: middle; }
+html.is-mobile .about .program-line .pt::before { display: none; }
+
+/* a trace of colour in the faded photos, one per performance (set "tint" in content.js) */
+.tint-rose  img { filter: sepia(.36) hue-rotate(-30deg) saturate(.8) brightness(.98) !important; }
+.tint-ochre img { filter: sepia(.4) hue-rotate(-8deg) saturate(.85) !important; }
+.tint-umber img { filter: sepia(.42) hue-rotate(-14deg) saturate(.7) brightness(.92) contrast(1.04) !important; }
+.tint-sepia img { filter: sepia(.35) saturate(.85) !important; }
+
+/* warm the paper very slightly */
+.paper::after, .veil-top::after, .sheet-paper::after { content: ""; position: absolute; inset: 0; background: var(--paper-tint); mix-blend-mode: multiply; pointer-events: none; }
+.spaced { word-spacing: .38em; }
+html.is-mobile .title-block .t { font-size: calc(var(--fs-big) * 1.08 * var(--u) * var(--ts, 1)); line-height: 1.02; }
+html.is-mobile .home-lines { display: none; }   /* too crowded on phones */
+html.is-mobile .about-quote blockquote { font-size: 17px; }

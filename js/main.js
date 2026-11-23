@@ -107,6 +107,9 @@
       fx: rand(i + 17) * 6.28, fy: rand(i + 19) * 6.28
     });
   }
+  // titles written letter by letter ("2 0 0 9") keep their wide spacing in the serif
+  function spaced(t) { return /^(\S )+\S$/.test(t) ? '<span class="spaced">' + t + "</span>" : t; }
+  function tintClass(p) { return p.tint ? " tint-" + p.tint : ""; }
   function byId(id) { for (var i = 0; i < S.performances.length; i++) if (S.performances[i].id === id) return S.performances[i]; return null; }
   function link(el, id) {
     el.classList.add("home-link");
@@ -124,7 +127,7 @@
     // 0. extra faded photos, deepest layer
     S.performances.forEach(function (p) {
       (p.home.extra || []).forEach(function (b) {
-        var el = h("div", "img-back extra" + (b.pretextured ? " pretextured" : ""));
+        var el = h("div", "img-back extra" + (b.pretextured ? " pretextured" : "") + tintClass(p));
         el.appendChild(Object.assign(new Image(), { src: IMG + b.src, alt: "" }));
         stage.appendChild(link(place(el, b, true), p.id));
       });
@@ -134,7 +137,7 @@
     S.performances.forEach(function (p) {
       var b = p.home.back;
       if (!b) return;
-      var el = h("div", "img-back" + (b.pretextured ? " pretextured" : b.texture ? " " + b.texture : ""));
+      var el = h("div", "img-back" + (b.pretextured ? " pretextured" : b.texture ? " " + b.texture : "") + tintClass(p));
       el.appendChild(Object.assign(new Image(), { src: IMG + b.src, alt: "" }));
       stage.appendChild(link(place(el, b, true), p.id));
     });
@@ -155,7 +158,7 @@
     S.performances.forEach(function (p) {
       var tb = p.home.titleBlock;
       var t = h("div", "title-block " + (tb.layout || "inline"));
-      t.appendChild(h("span", "t big", p.titleDisplay || p.title));
+      t.appendChild(h("span", "t big", spaced(p.titleDisplay || p.title)));
       var artists = tr(p.artists);
       t.appendChild(h("span", "a small", tb.layout === "stack" ? artists : artists.replace(" & ", " &<br>")));
       stage.appendChild(link(place(t, tb), p.id));
@@ -165,7 +168,14 @@
       d.textContent = tr(p.date) + "\n" + tr(p.times).join("\n") + "\n\n" + tr(p.location);
       stage.appendChild(link(place(d, p.home.dateBlock), p.id));
       addFloat(d, n++, 30, "home");
+      linePairs.push([t, d]);
     });
+
+    // thin lines joining each title to its dates
+    var NS = "http://www.w3.org/2000/svg";
+    lineSvg = document.createElementNS(NS, "svg"); lineSvg.setAttribute("class", "home-lines");
+    linePairs.forEach(function () { var l = document.createElementNS(NS, "line"); l.setAttribute("pathLength", "1"); lineSvg.appendChild(l); });
+    stage.appendChild(lineSvg);
 
     // 5. hover veil + title
     var vt = h("div", "veil-top", '<div class="paper-base"></div><div class="paper-light"></div>');
@@ -183,7 +193,7 @@
     title.addEventListener("click", function () { location.hash = "about"; });
 
     // 6. booking line + small "about" link (phones only)
-    if (S.booking) {
+    if (S.booking && S.booking.showOnHome !== false) {
       var bk = h("div", "booking small", tr(S.booking.text) + ' <a href="mailto:' + S.booking.email + '">' + S.booking.email + "</a>");
       stage.appendChild(place(bk, S.booking.position));
     }
@@ -215,7 +225,7 @@
     var list = h("div", "program");
     S.performances.forEach(function (p, i) {
       var a = h("a", "program-line big",
-        '<span class="pd">' + tr(p.date) + '</span> <span class="pa">' + tr(p.artists) + '</span> <span class="pt">' + (p.titleDisplay || p.title) + "</span>");
+        '<span class="pd">' + tr(p.date) + '</span> <span class="pa">' + tr(p.artists) + '</span> <span class="pt">' + spaced(p.titleDisplay || p.title) + "</span>");
       a.href = "#" + p.id;
       list.appendChild(a);
       addFloat(a, 40 + i, 9, "sheet", 0.06);
@@ -293,13 +303,13 @@
     stage.appendChild(sPlace(info, { x: ip.x, y: ip.y, w: right - ip.x }));
 
     if (P.faded) {
-      var f = h("div", "perf-faded" + (P.faded.alreadyFaded ? "" : " make-faded") + (P.faded.darkPhoto ? " dark-photo" : ""));
+      var f = h("div", "perf-faded" + (P.faded.alreadyFaded ? "" : " make-faded") + (P.faded.darkPhoto ? " dark-photo" : "") + tintClass(p));
       f.appendChild(Object.assign(new Image(), { src: IMG + P.faded.src, alt: "" }));
       stage.appendChild(sPlace(f, jittered(P.faded.desktop, P.jitter), P.faded.scrolls !== true));
     }
 
     (P.extra || []).forEach(function (x) {
-      var e = h("div", "perf-faded perf-extra");
+      var e = h("div", "perf-faded perf-extra" + tintClass(p));
       e.appendChild(Object.assign(new Image(), { src: IMG + x.src, alt: "" }));
       stage.appendChild(sPlace(e, x.desktop, x.scrolls !== true));
     });
@@ -313,9 +323,9 @@
     var html = "";
     if (tr(P.epigraph)) html += '<p class="epigraph">' + tr(P.epigraph) + "</p>";
     if (P.descriptionStartsWithTitle) {
-      html += '<p><span class="lead">' + p.title + "</span> " + paras.shift() + "</p>";
+      html += '<p><span class="lead">' + spaced(p.title) + "</span> " + paras.shift() + "</p>";
     } else {
-      html += '<span class="lead-line"><span class="lead">' + p.title + '</span><span class="who">' + tr(p.artists) + "</span></span>";
+      html += '<span class="lead-line"><span class="lead">' + spaced(p.title) + '</span><span class="who">' + tr(p.artists) + "</span></span>";
     }
     paras.forEach(function (x) { html += "<p>" + x + "</p>"; });
     var credits = tr(P.credits);
@@ -537,6 +547,23 @@
 
   /* ------------------------------------------------------------ floating */
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var linePairs = [], lineSvg = null;
+  function clip(c, o, r, gap) { // point where the ray from c towards o leaves rect r (+gap)
+    var dx = o.x - c.x, dy = o.y - c.y, hw = r.width / 2 + gap, hh = r.height / 2 + gap;
+    var s = Math.min(dx ? hw / Math.abs(dx) : 1e9, dy ? hh / Math.abs(dy) : 1e9);
+    return { x: c.x + dx * s, y: c.y + dy * s };
+  }
+  function updateLines() {
+    if (!lineSvg || !lineSvg.isConnected) return;
+    var S0 = lineSvg.getBoundingClientRect(), g = 14 * state.u, ls = lineSvg.querySelectorAll("line");
+    linePairs.forEach(function (p, i) {
+      var a = p[0].getBoundingClientRect(), b = p[1].getBoundingClientRect();
+      var ca = { x: a.left + a.width / 2 - S0.left, y: a.top + a.height / 2 - S0.top }, cb = { x: b.left + b.width / 2 - S0.left, y: b.top + b.height / 2 - S0.top };
+      var p1 = clip(ca, cb, a, g), p2 = clip(cb, ca, b, g);
+      ls[i].setAttribute("x1", p1.x); ls[i].setAttribute("y1", p1.y); ls[i].setAttribute("x2", p2.x); ls[i].setAttribute("y2", p2.y);
+    });
+  }
+  window.addEventListener("resize", function () { setTimeout(updateLines, 50); });
   function tick(ms) {
     var t = ms / 1000, k = (S.floatStrength == null ? 1 : S.floatStrength) * state.u * (state.mobile ? 0.45 : 1);
     for (var i = 0; i < floaters.length; i++) {
@@ -545,6 +572,7 @@
       var dy = f.ay * k * Math.sin(t * 6.283 / f.py + f.fy);
       f.el.style.transform = "translate(" + dx.toFixed(2) + "px," + dy.toFixed(2) + "px)";
     }
+    updateLines();
     requestAnimationFrame(tick);
   }
 
@@ -585,5 +613,5 @@
     }
     if (e.key === "Escape" && location.hash) location.hash = "";
   });
-  if (!reduce) requestAnimationFrame(tick);
+  if (!reduce) requestAnimationFrame(tick); else setTimeout(updateLines, 100);
 })();

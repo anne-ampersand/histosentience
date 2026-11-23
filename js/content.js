@@ -50,6 +50,7 @@ window.SITE = {
 
   /* Booking line on the homepage, under the title */
   booking: {
+    showOnHome: false,   // the free-entry line is kept off the homepage
     text: {
       en: "Free entry upon reservation, donation at the door:",
       fr: "Entrée libre sur réservation, donation à l’entrée :",
@@ -111,10 +112,10 @@ window.SITE = {
     /* The first word(s) of the description shown large */
     introLead: "Histosentience",
     intro: {
-      en: "is a three-day artist-run programme of performance, bringing together three artistic works presented over three consecutive evenings, each followed by a conversation with the artist. Taking as its starting point the concept of histosentience from Samuel R. Delany’s novel Out of the Dead City, which describes a particular form of intelligence that is conscious of its own historicity, the programme proposes a framework in which the works become contexts for one another, allowing their forms, questions and methods to be read relationally, while the artists themselves directly shape the discourse surrounding their work.",
-      fr: "est un programme de performance de trois jours, porté par des artistes, qui réunit trois œuvres présentées sur trois soirées consécutives, chacune suivie d'une conversation avec l'artiste. Prenant pour point de départ le concept d'histosentience issu du roman de Samuel R. Delany Out of the Dead City, qui décrit une forme particulière d'intelligence consciente de sa propre historicité, le programme propose un cadre dans lequel les œuvres deviennent des contextes les unes pour les autres, permettant de lire leurs formes, leurs questions et leurs méthodes de manière relationnelle, tandis que les artistes façonnent directement le discours autour de leur travail.",
-      nl: "is een driedaags, door kunstenaars gerund performanceprogramma dat drie artistieke werken samenbrengt op drie opeenvolgende avonden, telkens gevolgd door een gesprek met de kunstenaar. Met als vertrekpunt het begrip histosentience uit Samuel R. Delany's roman Out of the Dead City, dat een bijzondere vorm van intelligentie beschrijft die zich bewust is van haar eigen historiciteit, stelt het programma een kader voor waarin de werken context worden voor elkaar, zodat hun vormen, vragen en methoden relationeel gelezen kunnen worden, terwijl de kunstenaars zelf het discours rond hun werk rechtstreeks vormgeven.",
-      hr: "je trodnevni program izvedbi koji vode umjetnici, a okuplja tri umjetnička rada predstavljena tijekom tri uzastopne večeri, nakon kojih slijedi razgovor s umjetnicima. Polazeći od pojma histosentience iz romana Samuela R. Delanyja Out of the Dead City, koji opisuje osobit oblik inteligencije svjestan vlastite povijesnosti, program predlaže okvir u kojem radovi postaju konteksti jedni drugima, omogućujući da se njihove forme, pitanja i metode čitaju relacijski, dok umjetnici sami izravno oblikuju diskurs o svom radu."
+      en: "is an artist-run programme of performance, bringing together three artistic works presented over three consecutive days, each followed by a conversation with the artist. Taking on the concept of histosentience from Samuel R. Delany’s novel Out of the Dead City (1968), which describes a particular form of intelligence that is conscious of its own historicity, the programme proposes a framework in which the works become contexts for one another, allowing their forms, questions and methods to be read relationally, while the artists themselves continue to shape the discourse surrounding their work.",
+      fr: "est un programme de performance porté par des artistes, qui réunit trois œuvres présentées sur trois jours consécutifs, chacune suivie d'une conversation avec l'artiste. Reprenant le concept d'histosentience issu du roman de Samuel R. Delany Out of the Dead City (1968), qui décrit une forme particulière d'intelligence consciente de sa propre historicité, le programme propose un cadre dans lequel les œuvres deviennent des contextes les unes pour les autres, permettant de lire leurs formes, leurs questions et leurs méthodes de manière relationnelle, tandis que les artistes continuent de façonner le discours autour de leur travail.",
+      nl: "is een door kunstenaars gerund performanceprogramma dat drie artistieke werken samenbrengt op drie opeenvolgende dagen, telkens gevolgd door een gesprek met de kunstenaar. Het programma neemt het begrip histosentience over uit Samuel R. Delany's roman Out of the Dead City (1968), dat een bijzondere vorm van intelligentie beschrijft die zich bewust is van haar eigen historiciteit, en stelt een kader voor waarin de werken context worden voor elkaar, zodat hun vormen, vragen en methoden relationeel gelezen kunnen worden, terwijl de kunstenaars zelf het discours rond hun werk blijven vormgeven.",
+      hr: "je program izvedbi koji vode umjetnici, a okuplja tri umjetnička rada predstavljena tijekom tri uzastopna dana, nakon kojih slijedi razgovor s umjetnicima. Preuzimajući pojam histosentience iz romana Samuela R. Delanyja Out of the Dead City (1968), koji opisuje osobit oblik inteligencije svjestan vlastite povijesnosti, program predlaže okvir u kojem radovi postaju konteksti jedni drugima, omogućujući da se njihove forme, pitanja i metode čitaju relacijski, dok umjetnici i dalje oblikuju diskurs o svom radu."
     },
 
     locations: [
@@ -146,10 +147,10 @@ window.SITE = {
         text: "<a href=\"https://www.garage29-offestival.be/a-propos/\">Sabina Scarlat</a> - Metarage" },
       { label: { en: "Funding", fr: "Soutien", nl: "Financiering", hr: "Financijska potpora" },
         text: {
-          en: "<a href=\"https://zagreb.hr/javni-poziv-za-predlaganje-programa-u-kulturi-grad/210547\">City of Zagreb</a><br>Saint-Gilles Commune",
-          fr: "<a href=\"https://zagreb.hr/javni-poziv-za-predlaganje-programa-u-kulturi-grad/210547\">Ville de Zagreb</a><br>Commune de Saint-Gilles",
-          nl: "<a href=\"https://zagreb.hr/javni-poziv-za-predlaganje-programa-u-kulturi-grad/210547\">Stad Zagreb</a><br>Gemeente Sint-Gillis",
-          hr: "<a href=\"https://zagreb.hr/javni-poziv-za-predlaganje-programa-u-kulturi-grad/210547\">Grad Zagreb</a><br>Općina Saint-Gilles"
+          en: "<a href=\"https://zagreb.hr/javni-poziv-za-predlaganje-programa-u-kulturi-grad/210547\">City of Zagreb</a>",
+          fr: "<a href=\"https://zagreb.hr/javni-poziv-za-predlaganje-programa-u-kulturi-grad/210547\">Ville de Zagreb</a>",
+          nl: "<a href=\"https://zagreb.hr/javni-poziv-za-predlaganje-programa-u-kulturi-grad/210547\">Stad Zagreb</a>",
+          hr: "<a href=\"https://zagreb.hr/javni-poziv-za-predlaganje-programa-u-kulturi-grad/210547\">Grad Zagreb</a>"
         } },
       { label: { en: "Website and design", fr: "Site web et design", nl: "Website en ontwerp", hr: "Web stranica i dizajn" },
         text: "Marko Gutić Mižimakov" }
@@ -188,6 +189,7 @@ window.SITE = {
     /* ============================ 2009 ============================ */
     {
       id: "2009",
+      tint: "rose",          // colour of the faded photos: rose / ochre / umber / sepia (or "" for grey)
       title: "2 0 0 9",
       titleDisplay: "2 0 0 9",            // how the title is written on homepage + programme
       artists: "Stefa Govaart & Marko Gutić Mižimakov",
@@ -217,7 +219,7 @@ window.SITE = {
         back:  { src: "2009-back-tex.jpg", pretextured: true, desktop: { x: 156, y: 103, w: 430 }, mobile: { x: 12,  y: 92,  w: 168 } },
         front: { src: "2009-front-tex.jpg", pretextured: true, desktop: { x: 514, y: 84,  w: 286 }, mobile: { x: 150, y: 66,  w: 116 } },
         titleBlock: { layout: "inline", desktop: { x: 108, y: 616 }, mobile: { x: 12,  y: 316 } },
-        dateBlock:  {                   desktop: { x: 525, y: 610 }, mobile: { x: 196, y: 238 } }
+        dateBlock:  {                   desktop: { x: 650, y: 525 }, mobile: { x: 196, y: 238 } }
       },
 
       page: {
@@ -276,6 +278,7 @@ window.SITE = {
     /* ======================= SUN CUT ======================= */
     {
       id: "sun-cut",
+      tint: "ochre",          // colour of the faded photos: rose / ochre / umber / sepia (or "" for grey)
       title: "Sun Cut: a lover’s dictionary",
       titleDisplay: "Sun Cut: a lover’s dictionary",
       artists: "Chloe Chignell",
@@ -378,6 +381,7 @@ window.SITE = {
     /* ======================= DOLLS & GOATS ======================= */
     {
       id: "dolls-and-goats",
+      tint: "umber",          // colour of the faded photos: rose / ochre / umber / sepia (or "" for grey)
       title: "Dolls & Goats",
       titleDisplay: "Dolls & Goats",
       artists: "Zrinka Užbinec",
